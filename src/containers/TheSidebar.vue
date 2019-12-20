@@ -4,11 +4,11 @@
     :minimize="minimize"
     :show.sync="show"
   >
-    <CSidebarBrand
-      :imgFull="{ width: 118, height: 46, alt: 'Logo', src: 'img/brand/KO_white_icon.svg'}"
-      :imgMinimized="{ width: 118, height: 46, alt: 'Logo', src: 'img/brand/KO_white_icon.svg'}"
-      :wrappedInLink="{ href: 'https:/knownorigin.io/', target: '_blank'}"
-    />
+    <!--<CSidebarBrand-->
+      <!--:imgFull="{ width: 118, height: 46, alt: 'Logo', src: 'img/brand/KO_white_icon.svg'}"-->
+      <!--:imgMinimized="{ width: 118, height: 46, alt: 'Logo', src: 'img/brand/KO_white_icon.svg'}"-->
+      <!--:wrappedInLink="{ href: 'https:/knownorigin.io/', target: '_blank'}"-->
+    <!--/>-->
     <CRenderFunction flat :content-to-render="nav"/>
     <CSidebarMinimizer
       class="d-md-down-none"
