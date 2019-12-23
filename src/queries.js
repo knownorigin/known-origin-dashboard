@@ -50,3 +50,19 @@ export const THIS_MONTHS_COUNTS = gql`
         }
     }
 `;
+
+export const TOP_SELLING_ARTISTS = gql`
+    {
+        topSellingArtists: artists(first: 100, orderBy: totalValueInEth, orderDirection: desc) {
+            address
+            supply
+            totalValueInEth
+            editionsCount
+            salesCount
+            giftsCount
+            highestSaleValueInEth
+            firstEditionTimestamp
+            lastEditionTimestamp
+        }
+    }
+`

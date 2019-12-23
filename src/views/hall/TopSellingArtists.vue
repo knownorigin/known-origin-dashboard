@@ -3,46 +3,36 @@
         <CCard>
             <CCardHeader>
                 <CIcon name="cil-dollar"/>
-                Top Selling Artists
+                Top 100 Selling Artists
             </CCardHeader>
             <CCardBody>
                 <CDataTable
                         class="mb-0 table-outline"
                         hover
-                        :items="tableItems"
+                        :items="topSellingArtists"
                         :fields="tableFields"
                         head-color="light"
-                        no-sorting>
+                        no-sorting v-if="topSellingArtists">
                     <td slot="avatar" class="text-center" slot-scope="{item}">
                         <div class="c-avatar">
-                            <img :src="item.avatar.url" class="c-avatar-img" alt="">
-                            <span class="c-avatar-status" :class="`bg-${item.avatar.status || 'secondary'}`"></span>
+                            <!--<img :src="item.avatar.url" class="c-avatar-img" alt="">-->
                         </div>
                     </td>
                     <td slot="user" slot-scope="{item}">
-                        <div>{{item.user.name}}</div>
+                        <div>{{item.address}}</div>
                         <div class="small text-muted">
-                            <span><template v-if="item.user.new">New</template><template v-else>Recurring</template></span> | Registered: {{item.user.registered}}
+                            Editions: {{new Date(item.firstEditionTimestamp * 1000).toDateString()}} - {{new Date(item.lastEditionTimestamp * 1000).toDateString()}}
                         </div>
                     </td>
-                    <td slot="country" slot-scope="{item}" class="text-center">
-                        <CIcon :name="item.country.flag" height="25"/>
-                    </td>
-                    <td slot="usage" slot-scope="{item}">
+                    <td slot="sales" slot-scope="{item}">
                         <div class="clearfix">
-                            <div class="float-left">
-                                <strong>{{item.usage.value}}%</strong>
-                            </div>
-                            <div class="float-right">
-                                <small class="text-muted">{{item.usage.period}}</small>
-                            </div>
+                            <strong>{{item.totalValueInEth}}</strong> ETH
+                            <div class="small text-muted">{{item.salesCount}} sales</div>
                         </div>
                     </td>
-                    <td slot="payment" slot-scope="{item}" class="text-center">
-                    </td>
-                    <td slot="activity" slot-scope="{item}">
-                        <div class="small text-muted">Last login</div>
-                        <strong>{{item.activity}}</strong>
+                    <td slot="highest" slot-scope="{item}">
+
+                        <strong>{{item.highestSaleValueInEth}}</strong> ETH
                     </td>
                 </CDataTable>
             </CCardBody>
@@ -51,6 +41,8 @@
 </template>
 
 <script>
+    import {TOP_SELLING_ARTISTS} from "../../queries";
+
     export default {
         name: 'TopSellingArtists',
         data() {
@@ -108,12 +100,13 @@
                 tableFields: [
                     {key: 'avatar', label: '', _classes: 'text-center'},
                     {key: 'user'},
-                    {key: 'country', _classes: 'text-center'},
-                    {key: 'usage'},
-                    {key: 'payment', label: 'Payment', _classes: 'text-center'},
-                    {key: 'activity'},
+                    {key: 'sales'},
+                    {key: 'highest'},
                 ]
             };
+        },
+        apollo: {
+            topSellingArtists: TOP_SELLING_ARTISTS,
         },
     };
 </script>
