@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import TopSellingArtists from "../views/hall/TopSellingArtists";
+import TopSellingTokens from "../views/hall/TopSellingTokens";
 
 // Containers
 const TheContainer = () => import('@/containers/TheContainer')
@@ -78,6 +80,26 @@ function configRoutes () {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'hall',
+          redirect: '/hall/artists',
+          name: 'Hall of Fame',
+          component: {
+            render (c) { return c('router-view') }
+          },
+          children: [
+            {
+              path: 'artists',
+              name: 'Artists',
+              component: TopSellingArtists
+            },
+            {
+              path: 'tokens',
+              name: 'Tokens',
+              component: TopSellingTokens
+            }
+          ]
         },
         {
           path: 'theme',

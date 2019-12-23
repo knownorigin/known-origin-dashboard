@@ -8,22 +8,22 @@ export default [
         to: '/dashboard',
         icon: 'cil-speedometer',
       },
-      // {
-      //   _name: 'CSidebarNavTitle',
-      //   _children: ['Theme']
-      // },
-      // {
-      //   _name: 'CSidebarNavItem',
-      //   name: 'Colors',
-      //   to: '/theme/colors',
-      //   icon: 'cil-drop'
-      // },
-      // {
-      //   _name: 'CSidebarNavItem',
-      //   name: 'Typography',
-      //   to: '/theme/typography',
-      //   icon: 'cil-pencil'
-      // },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Hall of Fame']
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Top Selling Artists',
+        to: '/hall/artists',
+        icon: 'cil-dollar'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Top Selling Tokens',
+        to: '/hall/tokens',
+        icon: 'cil-moon'
+      },
       // {
       //   _name: 'CSidebarNavTitle',
       //   _children: ['Components']
