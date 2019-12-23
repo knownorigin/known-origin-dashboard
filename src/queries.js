@@ -66,3 +66,20 @@ export const TOP_SELLING_ARTISTS = gql`
         }
     }
 `
+
+export const HIGHEST_TOKEN_PER_DAY = gql`
+    {
+        highestTokenPerDay: days(first: 10, orderBy: highestValueInEth, orderDirection: desc) {
+            highestValueInEth
+            date
+            highestValueToken {
+                tokenId
+                metadata {
+                    name
+                    image
+                    scarcity
+                }
+            }
+        }
+    }
+`
