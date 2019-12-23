@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h2>Today</h2>
+    <h4>Today</h4>
     <TodayWidgets/>
+    <h4>Last 30 days</h4>
+    <MonthWidgets/>
     <!--<CCard>-->
       <!--<CCardBody>-->
         <!--<CRow>-->
@@ -460,10 +462,12 @@ import WidgetsDropdown from './widgets/WidgetsDropdown'
 import WidgetsBrand from './widgets/WidgetsBrand'
 import {TODAY_COUNTS} from "../queries";
 import TodayWidgets from "./widgets/TodayWidgets";
+import MonthWidgets from "./widgets/MonthWidgets";
 
 export default {
   name: 'Dashboard',
   components: {
+    MonthWidgets,
     TodayWidgets,
     MainChartExample,
     WidgetsDropdown,

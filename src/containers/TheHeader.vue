@@ -10,13 +10,13 @@
       class="ml-3 d-md-down-none"
       v-c-emit-root-event:toggle-sidebar
     />
-    <CHeaderBrand
-      class="mx-auto d-lg-none"
-      src="img/brand/KO_icon.svg"
-      width="190"
-      height="46"
-      alt="CoreUI Logo"
-    />
+    <!--<CHeaderBrand-->
+      <!--class="mx-auto d-lg-none"-->
+      <!--src="img/brand/KO_icon.svg"-->
+      <!--width="190"-->
+      <!--height="46"-->
+      <!--alt="CoreUI Logo"-->
+    <!--/>-->
     <CHeaderNav class="d-md-down-none mr-auto">
       <CHeaderNavItem class="px-3">
         <CHeaderNavLink to="/dashboard">
@@ -34,12 +34,12 @@
         <!--</CHeaderNavLink>-->
       <!--</CHeaderNavItem>-->
     </CHeaderNav>
-    <CHeaderNav class="mr-4">
-      <CHeaderNavItem class="d-md-down-none mx-2">
-        <CHeaderNavLink>
-          <CIcon name="cil-bell"/>
-        </CHeaderNavLink>
-      </CHeaderNavItem>
+    <!--<CHeaderNav class="mr-4">-->
+      <!--<CHeaderNavItem class="d-md-down-none mx-2">-->
+        <!--<CHeaderNavLink>-->
+          <!--<CIcon name="cil-bell"/>-->
+        <!--</CHeaderNavLink>-->
+      <!--</CHeaderNavItem>-->
       <!--<CHeaderNavItem class="d-md-down-none mx-2">-->
         <!--<CHeaderNavLink>-->
           <!--<CIcon name="cil-list"/>-->
@@ -51,7 +51,7 @@
         <!--</CHeaderNavLink>-->
       <!--</CHeaderNavItem>-->
       <!--<TheHeaderDropdownAccnt/>-->
-    </CHeaderNav>
+    <!--</CHeaderNav>-->
     <CSubheader class="px-3">
       <CBreadcrumbRouter class="border-0"/>
     </CSubheader>
