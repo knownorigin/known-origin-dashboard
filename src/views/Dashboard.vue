@@ -1,9 +1,12 @@
 <template>
   <div>
     <h4>Today</h4>
-    <TodayWidgets/>
+    <KoTodayWidgets/>
     <h4>Last 30 days</h4>
-    <MonthWidgets/>
+    <KoSummaryWidgets :ko-data="last30Counts"/>
+    <h4>All time</h4>
+    <KoSummaryWidgets :ko-data="allTimeCounts"/>
+    <!--<MonthWidgets/>-->
     <!--<CCard>-->
       <!--<CCardBody>-->
         <!--<CRow>-->
@@ -460,15 +463,17 @@
 import MainChartExample from './charts/MainChartExample'
 import WidgetsDropdown from './widgets/WidgetsDropdown'
 import WidgetsBrand from './widgets/WidgetsBrand'
-import {TODAY_COUNTS} from "../queries";
-import TodayWidgets from "./widgets/TodayWidgets";
 import MonthWidgets from "./widgets/MonthWidgets";
+import KoSummaryWidgets from "./widgets/KoSummaryWidgets";
+import {ALL_TIME_COUNTS, LAST_30_DAYS_COUNTS} from "../queries";
+import KoTodayWidgets from "./widgets/KoTodayWidgets";
 
 export default {
   name: 'Dashboard',
   components: {
+    KoSummaryWidgets,
     MonthWidgets,
-    TodayWidgets,
+    KoTodayWidgets,
     MainChartExample,
     WidgetsDropdown,
     WidgetsBrand
@@ -550,6 +555,10 @@ export default {
       }
       return $color
     }
+  },
+  apollo: {
+    last30Counts: LAST_30_DAYS_COUNTS,
+    allTimeCounts: ALL_TIME_COUNTS,
   },
 }
 </script>

@@ -2,7 +2,7 @@ import {gql} from "apollo-boost";
 
 export const TODAY_COUNTS = gql`
     {
-        today: days(first: 1, orderBy: date, orderDirection: desc) {
+        todayCounts: days(first: 1, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -17,9 +17,9 @@ export const TODAY_COUNTS = gql`
     }
 `;
 
-export const THIS_WEEK_COUNTS = gql`
+export const LAST_WEEK_COUNTS = gql`
     {
-        thisweek: days(first: 6, skip: 1, orderBy: date, orderDirection: desc) {
+        lastWeekCounts: days(first: 6, skip: 1, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -34,9 +34,43 @@ export const THIS_WEEK_COUNTS = gql`
     }
 `;
 
-export const THIS_MONTHS_COUNTS = gql`
+export const LAST_7_DAYS_COUNTS = gql`
     {
-        thismonth: days(first: 30, orderBy: date, orderDirection: desc) {
+        last30Counts: days(first: 7, orderBy: date, orderDirection: desc) {
+            date
+            transferCount
+            salesCount
+            giftsCount
+            editionsCount
+            bidsAcceptedCount
+            bidsPlacedCount
+            bidsRejectedCount
+            totalValueInEth
+            highestValueInEth
+        }
+    }
+`;
+
+export const LAST_30_DAYS_COUNTS = gql`
+    {
+        last30Counts: days(first: 30, orderBy: date, orderDirection: desc) {
+            date
+            transferCount
+            salesCount
+            giftsCount
+            editionsCount
+            bidsAcceptedCount
+            bidsPlacedCount
+            bidsRejectedCount
+            totalValueInEth
+            highestValueInEth
+        }
+    }
+`;
+
+export const ALL_TIME_COUNTS = gql`
+    {
+        allTimeCounts: days(first: 1000, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
