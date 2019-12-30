@@ -2,8 +2,10 @@
   <div>
     <h4>Today</h4>
     <TodayWidgets/>
-    <h4>Last 30 days</h4>
-    <MonthWidgets/>
+    <h4>This Month ({{currentMonthName}})</h4>
+    <MonthWidgets :query="CURRENT_MONTH_QUERY"/>
+    <h4>Last 60 days</h4>
+    <MonthWidgets :query="LAST_60_DAYS_QUERY"/>
     <!--<CCard>-->
       <!--<CCardBody>-->
         <!--<CRow>-->
@@ -457,12 +459,13 @@
 </template>
 
 <script>
+import moment from 'moment';
 import MainChartExample from './charts/MainChartExample'
 import WidgetsDropdown from './widgets/WidgetsDropdown'
 import WidgetsBrand from './widgets/WidgetsBrand'
-import {TODAY_COUNTS} from "../queries";
 import TodayWidgets from "./widgets/TodayWidgets";
 import MonthWidgets from "./widgets/MonthWidgets";
+import {CURRENT_MONTHS_DAYS_COUNTS, LAST_60_DAYS_COUNTS} from '../queries';
 
 export default {
   name: 'Dashboard',
@@ -476,6 +479,9 @@ export default {
   data () {
     return {
       selected: 'Month',
+      currentMonthName: moment().format("MMM"),
+      CURRENT_MONTH_QUERY: CURRENT_MONTHS_DAYS_COUNTS(),
+      LAST_60_DAYS_QUERY: LAST_60_DAYS_COUNTS,
       tableItems: [
         {
           avatar: { url: 'img/avatars/1.jpg', status: 'success' },

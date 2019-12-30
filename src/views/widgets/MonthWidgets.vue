@@ -67,11 +67,11 @@
 
 <script>
     import {CChartLineSimple, CChartBarSimple} from '../charts/index.js';
-    import {THIS_MONTHS_COUNTS} from "../../queries";
 
     export default {
         name: 'MonthWidgets',
         components: {CChartLineSimple, CChartBarSimple},
+        props: ['query'],
         methods: {
             monthInSalesCountTotal() {
                 if (!this.thismonth) return null;
@@ -107,7 +107,11 @@
             },
         },
         apollo: {
-            thismonth: THIS_MONTHS_COUNTS
+            thismonth: {
+              query() {
+                return this.query
+              }
+            }
         },
     };
 </script>
