@@ -14,12 +14,13 @@
                         head-color="light"
                         no-sorting v-if="topSellingArtists">
                     <td slot="avatar" class="text-center" slot-scope="{item}">
-                        <div class="c-avatar">
-                            <img :src="'img/avatars/1.jpg'" class="c-avatar-img" alt="">
+                        <div class="c-avatar" v-if="artistMap && artistMap[item.address.toLowerCase()]">
+                            <img :src="artistMap[item.address.toLowerCase()].logo" class="c-avatar-img" alt="">
                         </div>
                     </td>
                     <td slot="user" slot-scope="{item}" class="d-none d-sm-table-cell">
-                        <div>{{item.address}}</div>
+                        <div v-if="artistMap && artistMap[item.address.toLowerCase()]">{{artistMap[item.address.toLowerCase()].name}}</div>
+                        <div v-else>{{item.address.toLowerCase()}}</div>
                         <div class="small text-muted">
                             Editions: {{new Date(item.firstEditionTimestamp * 1000).toDateString()}} - {{new Date(item.lastEditionTimestamp * 1000).toDateString()}}
                         </div>
@@ -55,19 +56,18 @@
                     {key: 'highest'},
                 ],
                 artistMap: {},
+                result: null,
             };
         },
         apollo: {
             topSellingArtists: TOP_SELLING_ARTISTS,
         },
-        created() {
+        mounted() {
             axios.get(`https://knownorigin.io/api/artist/all`).then((res) => {
                 res.data.forEach(a => {
-                    a.ethAddress.forEach(add => this.artistMap[`${add}`] = a);
+                    a.ethAddress.forEach(add => this.artistMap[`${add.toLowerCase()}`] = a);
                 });
-                console.log(this.artistMap);
             });
-
-        }
+        },
     };
 </script>
