@@ -105,13 +105,9 @@ export const ALL_TIME_COUNTS = gql`
 
 export const CURRENT_MONTHS_DAYS_COUNTS = () => {
   const startOfMonth = moment().startOf('month');
-  // Add one to ensure we get today
-  let currentDayOfMonth = moment().add(1, 'day');
-  const daysSinceStartOfMonth = currentDayOfMonth.diff(startOfMonth, 'days');
-  console.log(`Start of month [${startOfMonth}] and current date [${currentDayOfMonth}], completed days past is [${daysSinceStartOfMonth}]`);
   return gql`
       {
-          currentMonthCounts: days(first: ${daysSinceStartOfMonth}, orderBy: date, orderDirection: desc) {
+          currentMonthCounts: days(orderBy: id, orderDirection: asc, where:{ date_gte: "${startOfMonth.format("YYYY-MM-DD")}"}) {
               date
               transferCount
               salesCount

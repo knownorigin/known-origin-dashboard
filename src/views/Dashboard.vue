@@ -6,6 +6,12 @@
         <h4>This Month ({{currentMonthName}})</h4>
         <KoSummaryWidgets :ko-data="currentMonthCounts"/>
 
+        <h4>Last 7 days</h4>
+        <KoSummaryWidgets :ko-data="last7Counts"/>
+
+        <h4>Last 30 days</h4>
+        <KoSummaryWidgets :ko-data="last30Counts"/>
+
         <h4>Last 60 days</h4>
         <KoSummaryWidgets :ko-data="last60Counts"/>
 
@@ -18,7 +24,13 @@
   import moment from 'moment';
   import MonthWidgets from './widgets/MonthWidgets';
   import KoSummaryWidgets from './widgets/KoSummaryWidgets';
-  import {ALL_TIME_COUNTS, LAST_30_DAYS_COUNTS, CURRENT_MONTHS_DAYS_COUNTS, LAST_60_DAYS_COUNTS} from '../queries';
+  import {
+    ALL_TIME_COUNTS,
+    LAST_7_DAYS_COUNTS,
+    LAST_30_DAYS_COUNTS,
+    LAST_60_DAYS_COUNTS,
+    CURRENT_MONTHS_DAYS_COUNTS
+  } from '../queries';
   import KoTodayWidgets from './widgets/KoTodayWidgets';
 
   export default {
@@ -108,6 +120,7 @@
       }
     },
     apollo: {
+      last7Counts: LAST_7_DAYS_COUNTS,
       last30Counts: LAST_30_DAYS_COUNTS,
       last60Counts: LAST_60_DAYS_COUNTS,
       allTimeCounts: ALL_TIME_COUNTS,
