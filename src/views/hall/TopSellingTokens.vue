@@ -3,7 +3,7 @@
     <CCard>
       <CCardHeader>
         <CIcon name="cil-dollar"/>
-        Top 100 Selling Artists
+        Top 10 Tokens (per day)
       </CCardHeader>
       <CCardBody>
         <CDataTable

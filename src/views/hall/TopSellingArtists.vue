@@ -42,6 +42,7 @@
 
 <script>
     import {TOP_SELLING_ARTISTS} from "../../queries";
+    import axios from 'axios';
 
     export default {
         name: 'TopSellingArtists',
@@ -52,13 +53,21 @@
                     {key: 'user', _classes: 'd-none d-sm-table-cell'},
                     {key: 'sales'},
                     {key: 'highest'},
-                ]
+                ],
+                artistMap: {},
             };
         },
         apollo: {
             topSellingArtists: TOP_SELLING_ARTISTS,
         },
+        created() {
+            axios.get(`https://knownorigin.io/api/artist/all`).then((res) => {
+                res.data.forEach(a => {
+                    a.ethAddress.forEach(add => this.artistMap[`${add}`] = a);
+                });
+                console.log(this.artistMap);
+            });
 
-        //https://knownorigin.io/api/artist/all
+        }
     };
 </script>

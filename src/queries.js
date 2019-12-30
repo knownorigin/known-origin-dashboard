@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export const TODAY_COUNTS = gql`
     {
-        today: days(first: 1, orderBy: date, orderDirection: desc) {
+        todayCounts: days(first: 1, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -18,9 +18,26 @@ export const TODAY_COUNTS = gql`
     }
 `;
 
-export const THIS_WEEK_COUNTS = gql`
+export const LAST_WEEK_COUNTS = gql`
     {
-        thisweek: days(first: 6, skip: 1, orderBy: date, orderDirection: desc) {
+        lastWeekCounts: days(first: 6, skip: 1, orderBy: date, orderDirection: desc) {
+            date
+            transferCount
+            salesCount
+            giftsCount
+            editionsCount
+            bidsAcceptedCount
+            bidsPlacedCount
+            bidsRejectedCount
+            totalValueInEth
+            highestValueInEth
+        }
+    }
+`;
+
+export const LAST_7_DAYS_COUNTS = gql`
+    {
+        last7Counts: days(first: 7, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -37,7 +54,7 @@ export const THIS_WEEK_COUNTS = gql`
 
 export const LAST_30_DAYS_COUNTS = gql`
     {
-        thismonth: days(first: 30, orderBy: date, orderDirection: desc) {
+        last30Counts: days(first: 30, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -54,7 +71,7 @@ export const LAST_30_DAYS_COUNTS = gql`
 
 export const LAST_60_DAYS_COUNTS = gql`
     {
-        thismonth: days(first: 60, orderBy: date, orderDirection: desc) {
+        last60Counts: days(first: 60, orderBy: date, orderDirection: desc) {
             date
             transferCount
             salesCount
@@ -69,6 +86,22 @@ export const LAST_60_DAYS_COUNTS = gql`
     }
 `;
 
+export const ALL_TIME_COUNTS = gql`
+    {
+        allTimeCounts: days(first: 1000, orderBy: date, orderDirection: desc) {
+            date
+            transferCount
+            salesCount
+            giftsCount
+            editionsCount
+            bidsAcceptedCount
+            bidsPlacedCount
+            bidsRejectedCount
+            totalValueInEth
+            highestValueInEth
+        }
+    }
+`;
 
 export const CURRENT_MONTHS_DAYS_COUNTS = () => {
   const startOfMonth = moment().startOf('month');
@@ -78,7 +111,7 @@ export const CURRENT_MONTHS_DAYS_COUNTS = () => {
   console.log(`Start of month [${startOfMonth}] and current date [${currentDayOfMonth}], completed days past is [${daysSinceStartOfMonth}]`);
   return gql`
       {
-          thismonth: days(first: ${daysSinceStartOfMonth}, orderBy: date, orderDirection: desc) {
+          currentMonthCounts: days(first: ${daysSinceStartOfMonth}, orderBy: date, orderDirection: desc) {
               date
               transferCount
               salesCount
@@ -109,6 +142,7 @@ export const TOP_SELLING_ARTISTS = gql`
         }
     }
 `;
+
 
 export const HIGHEST_TOKEN_PER_DAY = gql`
     {
