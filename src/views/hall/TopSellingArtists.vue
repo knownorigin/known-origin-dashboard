@@ -44,6 +44,7 @@
 <script>
     import {TOP_SELLING_ARTISTS} from "../../queries";
     import axios from 'axios';
+    import {mapState} from "vuex";
 
     export default {
         name: 'TopSellingArtists',
@@ -55,19 +56,15 @@
                     {key: 'sales'},
                     {key: 'highest'},
                 ],
-                artistMap: {},
-                result: null,
             };
+        },
+        computed: {
+            ...mapState([
+                'artistMap',
+            ]),
         },
         apollo: {
             topSellingArtists: TOP_SELLING_ARTISTS,
-        },
-        mounted() {
-            axios.get(`https://knownorigin.io/api/artist/all`).then((res) => {
-                res.data.forEach(a => {
-                    a.ethAddress.forEach(add => this.artistMap[`${add.toLowerCase()}`] = a);
-                });
-            });
         },
     };
 </script>

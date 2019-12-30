@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import store from './store';
 import CoreuiVue from '@coreui/vue';
 import {iconsSet as icons} from './assets/icons/icons.js';
 
@@ -24,6 +25,7 @@ Vue.use(VueApollo);
 new Vue({
     el: '#app',
     router,
+    store,
     icons,
     apolloProvider,
     template: '<App/>',
