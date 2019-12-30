@@ -139,6 +139,22 @@ export const TOP_SELLING_ARTISTS = gql`
     }
 `;
 
+export const TOP_SELLING_ARTISTS_SALES = gql`
+    {
+        topSellingArtistsSales: artists(first: 100, orderBy: salesCount, orderDirection: desc) {
+            address
+            supply
+            totalValueInEth
+            editionsCount
+            salesCount
+            giftsCount
+            highestSaleValueInEth
+            firstEditionTimestamp
+            lastEditionTimestamp
+        }
+    }
+`;
+
 
 export const HIGHEST_TOKEN_PER_DAY = gql`
     {

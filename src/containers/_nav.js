@@ -14,9 +14,15 @@ export default [
       },
       {
         _name: 'CSidebarNavItem',
-        name: 'Top Selling Artists',
+        name: 'Top Artists by ETH',
         to: '/hall/artists',
         icon: 'cil-dollar'
+      },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Top Artists by Sales',
+        to: '/hall/sales',
+        icon: 'cil-puzzle'
       },
       {
         _name: 'CSidebarNavItem',

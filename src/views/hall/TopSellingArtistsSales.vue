@@ -3,16 +3,16 @@
         <CCard>
             <CCardHeader>
                 <CIcon name="cil-dollar"/>
-                Top 100 Artists (Total ETH)
+                Top 100 Artists (Total Sales)
             </CCardHeader>
             <CCardBody>
                 <CDataTable
                         class="mb-0 table-outline"
                         hover
-                        :items="topSellingArtists"
+                        :items="topSellingArtistsSales"
                         :fields="tableFields"
                         head-color="light"
-                        no-sorting v-if="topSellingArtists">
+                        no-sorting v-if="topSellingArtistsSales">
                     <td slot="avatar" class="text-center" slot-scope="{item}">
                         <div class="c-avatar" v-if="artistMap && artistMap[item.address.toLowerCase()]">
                             <img :src="artistMap[item.address.toLowerCase()].logo" class="c-avatar-img" :alt="artistMap[item.address.toLowerCase()].name" style="max-height: 50px">
@@ -27,8 +27,8 @@
                     </td>
                     <td slot="sales" slot-scope="{item}">
                         <div class="clearfix">
-                            <strong>{{item.totalValueInEth}}</strong> ETH
-                            <div class="small text-muted">{{item.salesCount}} sales</div>
+                            <strong>{{item.salesCount}} sales</strong>
+                            <div class="small text-muted">{{item.totalValueInEth}} ETH</div>
                         </div>
                     </td>
                     <td slot="highest" slot-scope="{item}">
@@ -42,11 +42,11 @@
 </template>
 
 <script>
-    import {TOP_SELLING_ARTISTS} from "../../queries";
+    import {TOP_SELLING_ARTISTS_SALES} from "../../queries";
     import {mapState} from "vuex";
 
     export default {
-        name: 'TopSellingArtists',
+        name: 'TopSellingArtistsSales',
         data() {
             return {
                 tableFields: [
@@ -63,7 +63,7 @@
             ]),
         },
         apollo: {
-            topSellingArtists: TOP_SELLING_ARTISTS,
+            topSellingArtistsSales: TOP_SELLING_ARTISTS_SALES,
         },
     };
 </script>
