@@ -18,7 +18,7 @@
               <img :src="item.highestValueToken.metadata.image" style="max-height: 50px; vertical-align: center" :alt="item.highestValueToken.metadata.name">
             </div>
           </td>
-          <td slot="name" slot-scope="{item}" class="text-center d-none d-sm-table-cell">
+          <td slot="name" slot-scope="{item}" class="text-left d-none d-sm-table-cell">
             <div>{{item.highestValueToken.metadata.name}}</div>
           </td>
           <td slot="sales" slot-scope="{item}">
@@ -42,7 +42,7 @@
       return {
         tableFields: [
           {key: 'avatar', label: '', _classes: 'text-center'},
-          {key: 'name',  _classes: 'text-center d-none d-sm-table-cell'},
+          {key: 'name',  _classes: 'text-left d-none d-sm-table-cell'},
           {key: 'sales'},
         ]
       };

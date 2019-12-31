@@ -4,20 +4,20 @@
       <CCol md="3" sm="6">
         <CWidgetBrand
           color="facebook"
-          right-header="89k"
-          right-footer="friends"
-          left-header="459"
-          left-footer="feeds"
+          right-header="433"
+          right-footer="community"
+          left-header="2"
+          left-footer="years"
         >
           <CIcon
-            name="cib-facebook"
+            name="cib-telegram-plane"
             height="52"
             class="my-4"
           />
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[65, 59, 84, 84, 51, 55, 40]"
+            :data-points="[50, 70, 150, 250, 433]"
             label="Friends"
             labels="months"
           />
@@ -26,9 +26,9 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="twitter"
-          right-header="973k"
+          right-header="2.77k"
           right-footer="followers"
-          left-header="1.792"
+          left-header="6.1K"
           left-footer="tweets"
         >
           <CIcon
@@ -47,14 +47,14 @@
        </CCol>
        <CCol md="3" sm="6">
         <CWidgetBrand
-          color="linkedin"
-          right-header="500+"
-          right-footer="contracts"
-          left-header="292"
-          left-footer="feeds"
+          color="danger"
+          right-header="300"
+          right-footer="followers"
+          left-header="125"
+          left-footer="posts"
         >
           <CIcon
-            name="cib-linkedin"
+            name="cib-instagram"
             height="52"
             class="my-4"
           />
@@ -69,14 +69,14 @@
        </CCol>
        <CCol md="3" sm="6">
         <CWidgetBrand
-          right-header="12"
-          right-footer="events"
-          left-header="4"
-          left-footer="meetings"
+          right-header="2"
+          right-footer="ranked"
+          left-header="200"
+          left-footer="artists"
           color="warning"
         >
           <CIcon
-            name="cil-calendar"
+            name="cil-globe-alt"
             height="52"
             class="my-4"
           />
