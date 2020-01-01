@@ -69,8 +69,8 @@
        </CCol>
        <CCol md="3" sm="6">
         <CWidgetBrand
-          right-header="2"
-          right-footer="ranked"
+          right-header="718,809"
+          right-footer="alexa rank"
           left-header="200"
           left-footer="artists"
           color="warning"
