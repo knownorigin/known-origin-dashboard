@@ -8,6 +8,8 @@ import {iconsSet as icons} from './assets/icons/icons.js';
 Vue.config.performance = true;
 Vue.use(CoreuiVue);
 
+Vue.use(require('vue-moment'));
+
 // Apollo gql magic
 import ApolloClient from "apollo-boost";
 import VueApollo from "vue-apollo";

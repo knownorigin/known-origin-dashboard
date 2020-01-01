@@ -172,3 +172,17 @@ export const HIGHEST_TOKEN_PER_DAY = gql`
         }
     }
 `;
+
+export const LAST_X_TOKENS = gql`
+  {
+    lastXTokens: tokens(first: 1, orderBy: birthTimestamp, orderDirection: desc) {
+      tokenId
+      birthTimestamp
+      metadata {
+        name
+        artist
+        image
+      }
+    }
+  }
+`
