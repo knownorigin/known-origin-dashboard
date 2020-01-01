@@ -186,3 +186,16 @@ export const LAST_X_TOKENS = gql`
     }
   }
 `
+
+export const LAST_X_EDITIONS = gql`
+  {
+    lastXEditions: editions(first: 1, orderBy: createdTimestamp, orderDirection: desc) {
+      createdTimestamp
+      metadata {
+        name
+        artist
+        image
+      }
+    }
+  }
+`

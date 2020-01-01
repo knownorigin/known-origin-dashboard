@@ -33,8 +33,18 @@
                     </CCardFooter>
                 </CCard>
             </CCol>
+            <CCol sm="4">
+                <CCard v-if="lastXEditions">
+                    <CCardHeader>Last Edition</CCardHeader>
+                    <CCardImg :src="lastXEditions[0].metadata.image"></CCardImg>
+                    <CCardFooter>
+                        <div>{{ lastXEditions[0].metadata.name }}</div>
+                        <div class="small text-muted">{{ (lastXEditions[0].birthTimestamp * 1000) | moment('from') }}</div>
+                    </CCardFooter>
+                </CCard>
+            </CCol>
         </CRow>
-        
+
         <CCard>
             <CCardBody>
                 <h4>{{currentMonthName}}</h4>
@@ -52,8 +62,6 @@
 
         <!--<h4>Last 60 days</h4>-->
         <!--<KoSummaryWidgets :ko-data="last60Counts"/>-->
-
-
 
 
         <!--<MonthWidgets/>-->
@@ -528,6 +536,7 @@
         LAST_30_DAYS_COUNTS,
         LAST_60_DAYS_COUNTS,
         LAST_X_TOKENS,
+        LAST_X_EDITIONS,
         CURRENT_MONTHS_DAYS_COUNTS
     } from '../queries';
     import KoTodayWidgets from './widgets/KoTodayWidgets';
@@ -571,6 +580,7 @@
             allTimeCounts: ALL_TIME_COUNTS,
             currentMonthCounts: CURRENT_MONTHS_DAYS_COUNTS(),
             lastXTokens: LAST_X_TOKENS,
+            lastXEditions: LAST_X_EDITIONS,
         },
     };
 </script>
