@@ -43,6 +43,20 @@
                     </CCardFooter>
                 </CCard>
             </CCol>
+            <CCol sm="4">
+                <CCard v-if="lastXAuctionEvents">
+                    <CCardHeader>Last Auction Event</CCardHeader>
+                    <CCardImg :src="lastXAuctionEvents[0].edition.metadata.image"></CCardImg>
+                    <CCardFooter>
+                        <div>
+                            {{ lastXAuctionEvents[0].edition.metadata.name }}
+                            <span class="text-warning small ml-4">{{ lastXAuctionEvents[0].name }}</span>
+                        </div>
+                        <div class="small">{{ lastXAuctionEvents[0].ethValue }} ETH</div>
+                        <div class="small text-muted">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from') }}</div>
+                    </CCardFooter>
+                </CCard>
+            </CCol>
         </CRow>
 
         <CCard>
@@ -537,6 +551,7 @@
         LAST_60_DAYS_COUNTS,
         LAST_X_TOKENS,
         LAST_X_EDITIONS,
+        LAST_X_AUCTION_EVENTS,
         CURRENT_MONTHS_DAYS_COUNTS
     } from '../queries';
     import KoTodayWidgets from './widgets/KoTodayWidgets';
@@ -581,6 +596,7 @@
             currentMonthCounts: CURRENT_MONTHS_DAYS_COUNTS(),
             lastXTokens: LAST_X_TOKENS,
             lastXEditions: LAST_X_EDITIONS,
+            lastXAuctionEvents: LAST_X_AUCTION_EVENTS,
         },
     };
 </script>

@@ -23,10 +23,12 @@ export default {
       const brandInfo = '#5165FF'
       const brandDanger = getColor('danger') || '#f86c6b'
 
-      const data1 = [];
+      let data1 = [];
       this.allTimeCounts.map(c => parseFloat(c.totalValueInEth)).reverse().reduce(function(a, b, i) {
         return data1[i] = a + b;
       }, 0);
+
+      data1 = data1.slice(data1.length - 30, data1.length - 1);
 
       // const data2 = []
       // const data3 = []

@@ -104,23 +104,23 @@ export const ALL_TIME_COUNTS = gql`
 `;
 
 export const CURRENT_MONTHS_DAYS_COUNTS = () => {
-  const startOfMonth = moment().startOf('month');
-  return gql`
-      {
-          currentMonthCounts: days(orderBy: id, orderDirection: asc, where:{ date_gte: "${startOfMonth.format("YYYY-MM-DD")}"}) {
-              date
-              transferCount
-              salesCount
-              giftsCount
-              editionsCount
-              bidsAcceptedCount
-              bidsPlacedCount
-              bidsRejectedCount
-              totalValueInEth
-              highestValueInEth
-          }
-      }
-  `;
+    const startOfMonth = moment().startOf('month');
+    return gql`
+        {
+            currentMonthCounts: days(orderBy: id, orderDirection: asc, where:{ date_gte: "${startOfMonth.format("YYYY-MM-DD")}"}) {
+                date
+                transferCount
+                salesCount
+                giftsCount
+                editionsCount
+                bidsAcceptedCount
+                bidsPlacedCount
+                bidsRejectedCount
+                totalValueInEth
+                highestValueInEth
+            }
+        }
+    `;
 };
 
 export const TOP_SELLING_ARTISTS = gql`
@@ -174,28 +174,44 @@ export const HIGHEST_TOKEN_PER_DAY = gql`
 `;
 
 export const LAST_X_TOKENS = gql`
-  {
-    lastXTokens: tokens(first: 1, orderBy: birthTimestamp, orderDirection: desc) {
-      tokenId
-      birthTimestamp
-      metadata {
-        name
-        artist
-        image
-      }
+    {
+        lastXTokens: tokens(first: 1, orderBy: birthTimestamp, orderDirection: desc) {
+            tokenId
+            birthTimestamp
+            metadata {
+                name
+                artist
+                image
+            }
+        }
     }
-  }
-`
+`;
 
 export const LAST_X_EDITIONS = gql`
-  {
-    lastXEditions: editions(first: 1, orderBy: createdTimestamp, orderDirection: desc) {
-      createdTimestamp
-      metadata {
-        name
-        artist
-        image
-      }
+    {
+        lastXEditions: editions(first: 1, orderBy: createdTimestamp, orderDirection: desc) {
+            createdTimestamp
+            metadata {
+                name
+                artist
+                image
+            }
+        }
     }
-  }
-`
+`;
+
+export const LAST_X_AUCTION_EVENTS = gql`
+    {
+        lastXAuctionEvents: auctionEvents(first: 1, orderBy:timestamp, orderDirection:desc) {
+            edition {
+                metadata {
+                    name
+                    image
+                }
+            }
+            name
+            ethValue
+            timestamp
+        }
+    }
+`;
