@@ -50,9 +50,12 @@
                     <CCardFooter>
                         <div>
                             {{ lastXAuctionEvents[0].edition.metadata.name }}
-                            <span class="text-warning small ml-4">{{ lastXAuctionEvents[0].name }}</span>
+
                         </div>
-                        <div class="small">{{ lastXAuctionEvents[0].ethValue }} ETH</div>
+                        <div class="small">
+                            {{ lastXAuctionEvents[0].name }}
+                            <span class="ml-4">{{ lastXAuctionEvents[0].ethValue }} ETH</span>
+                        </div>
                         <div class="small text-muted">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from') }}</div>
                     </CCardFooter>
                 </CCard>

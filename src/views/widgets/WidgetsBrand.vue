@@ -4,7 +4,7 @@
       <CCol md="3" sm="6">
         <CWidgetBrand
           color="facebook"
-          right-header="433"
+          right-header="443"
           right-footer="community"
           left-header="2"
           left-footer="years"
@@ -17,7 +17,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[50, 70, 150, 250, 433]"
+            :data-points="[50, 70, 150, 250, 443]"
             label="Friends"
             labels="months"
           />
@@ -61,7 +61,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[78, 81, 80, 45, 34, 12, 40]"
+            :data-points="[10, 33, 44, 200, 300]"
             label="Contracts"
             labels="months"
           />
@@ -83,7 +83,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[35, 23, 56, 22, 97, 23, 64]"
+            :data-points="[10, 20, 56, 122, 297, 323, 564]"
             label="Followers"
             labels="months"
           />
