@@ -28,7 +28,7 @@ export default {
         return data1[i] = a + b;
       }, 0);
 
-      data1 = data1.slice(data1.length - 30, data1.length - 1);
+      // data1 = data1.slice(data1.length - 30, data1.length - 1);
 
       // const data2 = []
       // const data3 = []

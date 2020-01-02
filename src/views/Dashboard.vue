@@ -39,7 +39,7 @@
                     <CCardImg :src="lastXEditions[0].metadata.image"></CCardImg>
                     <CCardFooter>
                         <div>{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="small text-muted">{{ (lastXEditions[0].birthTimestamp * 1000) | moment('from') }}</div>
+                        <div class="small text-muted">{{ (lastXEditions[0].createdTimestamp * 1000) | moment('from') }}</div>
                     </CCardFooter>
                 </CCard>
             </CCol>
