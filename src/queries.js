@@ -123,6 +123,32 @@ export const CURRENT_MONTHS_DAYS_COUNTS = () => {
     `;
 };
 
+export const LAST_MONTHS_DAYS_COUNTS = () => {
+    const startOfMonth = moment().subtract(1, 'months').startOf('month');
+    const endOfMonth = moment().subtract(1, 'months').endOf('month');
+    return gql`
+        {
+            lastMonthCounts: days(orderBy: id, orderDirection: asc, 
+                where:{ 
+                    date_gte: "${startOfMonth.format("YYYY-MM-DD")}",
+                    date_lte: "${endOfMonth.format("YYYY-MM-DD")}"
+                }
+            ) {
+                date
+                transferCount
+                salesCount
+                giftsCount
+                editionsCount
+                bidsAcceptedCount
+                bidsPlacedCount
+                bidsRejectedCount
+                totalValueInEth
+                highestValueInEth
+            }
+        }
+    `;
+};
+
 export const TOP_SELLING_ARTISTS = gql`
     {
         topSellingArtists: artists(first: 100, orderBy: totalValueInEth, orderDirection: desc) {
