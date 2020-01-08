@@ -178,6 +178,7 @@ export const LAST_X_TOKENS = gql`
         lastXTokens: tokens(first: 1, orderBy: birthTimestamp, orderDirection: desc) {
             tokenId
             birthTimestamp
+            primaryValueInEth
             metadata {
                 name
                 artist

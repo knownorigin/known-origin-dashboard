@@ -4,7 +4,7 @@
       <CCol md="3" sm="6">
         <CWidgetBrand
           color="facebook"
-          right-header="443"
+          right-header="461"
           right-footer="community"
           left-header="2"
           left-footer="years"
@@ -71,8 +71,8 @@
         <CWidgetBrand
           right-header="718,809"
           right-footer="alexa rank"
-          left-header="200"
-          left-footer="artists"
+          left-header="3.2K"
+          left-footer="visits"
           color="warning"
         >
           <CIcon

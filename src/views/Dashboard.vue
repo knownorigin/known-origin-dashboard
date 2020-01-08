@@ -28,8 +28,11 @@
                     <CCardHeader>Last Sale</CCardHeader>
                     <CCardImg :src="lastXTokens[0].metadata.image"></CCardImg>
                     <CCardFooter>
-                        <div>{{ lastXTokens[0].metadata.name }}</div>
-                        <div class="small text-muted">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from') }}</div>
+                        <div class="text-primary">{{ lastXTokens[0].metadata.name }}</div>
+                        <div class="small">
+                            {{ lastXTokens[0].primaryValueInEth }} ETH
+                        </div>
+                        <div class="small text-muted mt-2">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from') }}</div>
                     </CCardFooter>
                 </CCard>
             </CCol>
@@ -38,8 +41,8 @@
                     <CCardHeader>Last Edition</CCardHeader>
                     <CCardImg :src="lastXEditions[0].metadata.image"></CCardImg>
                     <CCardFooter>
-                        <div>{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="small text-muted">{{ (lastXEditions[0].createdTimestamp * 1000) | moment('from') }}</div>
+                        <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
+                        <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) | moment('from') }}</div>
                     </CCardFooter>
                 </CCard>
             </CCol>
@@ -48,15 +51,12 @@
                     <CCardHeader>Last Auction Event</CCardHeader>
                     <CCardImg :src="lastXAuctionEvents[0].edition.metadata.image"></CCardImg>
                     <CCardFooter>
-                        <div>
-                            {{ lastXAuctionEvents[0].edition.metadata.name }}
-
-                        </div>
+                        <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
                         <div class="small">
+                            {{ lastXAuctionEvents[0].ethValue }} ETH<br/>
                             {{ lastXAuctionEvents[0].name }}
-                            <span class="ml-4">{{ lastXAuctionEvents[0].ethValue }} ETH</span>
                         </div>
-                        <div class="small text-muted">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from') }}</div>
+                        <div class="small text-muted mt-2">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from') }}</div>
                     </CCardFooter>
                 </CCard>
             </CCol>
