@@ -62,6 +62,13 @@
 
         <CCard>
             <CCardBody>
+                <h4>Last seven days</h4>
+                <KoSummaryWidgets :ko-data="last7Counts"/>
+            </CCardBody>
+        </CCard>
+
+        <CCard>
+            <CCardBody>
                 <h4>{{currentMonthName}}</h4>
                 <KoSummaryWidgets :ko-data="currentMonthCounts"/>
             </CCardBody>
