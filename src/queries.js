@@ -210,6 +210,7 @@ export const LAST_X_TOKENS = gql`
                 artist
                 image
             }
+            editionNumber
         }
     }
 `;
@@ -223,6 +224,7 @@ export const LAST_X_EDITIONS = gql`
                 artist
                 image
             }
+            id
         }
     }
 `;
@@ -231,6 +233,7 @@ export const LAST_X_AUCTION_EVENTS = gql`
     {
         lastXAuctionEvents: auctionEvents(first: 1, orderBy:timestamp, orderDirection:desc) {
             edition {
+                id
                 metadata {
                     name
                     image

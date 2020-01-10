@@ -26,7 +26,9 @@
             <CCol sm="4">
                 <CCard v-if="lastXTokens">
                     <CCardHeader>Last Sale</CCardHeader>
-                    <CCardImg :src="lastXTokens[0].metadata.image"></CCardImg>
+                    <a :href="'http://knownorigin.io/edition/' + lastXTokens[0].editionNumber" target="_blank">
+                        <CCardImg :src="lastXTokens[0].metadata.image"></CCardImg>
+                    </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXTokens[0].metadata.name }}</div>
                         <div class="small">{{ lastXTokens[0].primaryValueInEth }} ETH</div>
@@ -37,7 +39,9 @@
             <CCol sm="4">
                 <CCard v-if="lastXEditions">
                     <CCardHeader>Last Edition</CCardHeader>
-                    <CCardImg :src="lastXEditions[0].metadata.image"></CCardImg>
+                    <a :href="'http://knownorigin.io/edition/' + lastXEditions[0].id" target="_blank">
+                        <CCardImg :src="lastXEditions[0].metadata.image"></CCardImg>
+                    </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
                         <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) | moment('from') }}</div>
@@ -47,7 +51,9 @@
             <CCol sm="4">
                 <CCard v-if="lastXAuctionEvents">
                     <CCardHeader>Last Auction Event</CCardHeader>
-                    <CCardImg :src="lastXAuctionEvents[0].edition.metadata.image"></CCardImg>
+                    <a :href="'http://knownorigin.io/edition/' + lastXAuctionEvents[0].edition.id" target="_blank">
+                        <CCardImg :src="lastXAuctionEvents[0].edition.metadata.image"></CCardImg>
+                    </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
                         <div class="small">

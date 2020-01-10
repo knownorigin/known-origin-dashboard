@@ -14,8 +14,10 @@
                 head-color="light"
                 no-sorting v-if="highestTokenPerDay">
           <td slot="avatar" class="text-center" slot-scope="{item}">
-            <div class="c-avatar">
-              <img :src="item.highestValueToken.metadata.image" style="max-height: 50px; vertical-align: center" :alt="item.highestValueToken.metadata.name">
+            <div class="c-avaLtar">
+              <a :href="'https://knownorigin.io/token/' + item.highestValueToken.tokenId" target="_blank">
+                <img :src="item.highestValueToken.metadata.image" style="max-height: 50px; vertical-align: center" :alt="item.highestValueToken.metadata.name">
+              </a>
             </div>
           </td>
           <td slot="name" slot-scope="{item}" class="text-left d-none d-sm-table-cell">
