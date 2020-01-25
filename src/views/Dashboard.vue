@@ -9,9 +9,20 @@
 
         <CCard>
             <CCardBody>
-                <h4>Cumulative sales (ETH)</h4>
-                <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
-                <MainChartExample :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+                <CRow>
+                    <CCol sm="6" lg="6">
+                        <h4>Cumulative sales (ETH)</h4>
+                        <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
+                        <MainChartExample :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+                    </CCol>
+                    <CCol sm="6" lg="6">
+                        <h4>Monthly Growth</h4>
+                        <div class="small text-muted mt-1 mb-4">last 12 months</div>
+                        <div>
+                            <CChartBarExample/>
+                        </div>
+                    </CCol>
+                </CRow>
             </CCardBody>
         </CCard>
 
@@ -31,8 +42,11 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXTokens[0].metadata.name }}</div>
+                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small">{{ lastXTokens[0].primaryValueInEth }} ETH</div>
-                        <div class="small text-muted mt-2">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from') }}</div>
+                        <div class="small text-muted mt-2">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from')
+                            }}
+                        </div>
                     </CCardFooter>
                 </CCard>
             </CCol>
@@ -44,7 +58,10 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) | moment('from') }}</div>
+                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) |
+                            moment('from') }}
+                        </div>
                     </CCardFooter>
                 </CCard>
             </CCol>
@@ -56,11 +73,14 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
+                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small">
                             {{ lastXAuctionEvents[0].ethValue }} ETH<br/>
                             {{ lastXAuctionEvents[0].name }}
                         </div>
-                        <div class="small text-muted mt-2">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from') }}</div>
+                        <div class="small text-muted mt-2">{{ (lastXAuctionEvents[0].timestamp * 1000) | moment('from')
+                            }}
+                        </div>
                     </CCardFooter>
                 </CCard>
             </CCol>
@@ -562,64 +582,68 @@
 </template>
 
 <script>
-  import moment from 'moment';
-  import MonthWidgets from './widgets/MonthWidgets';
-  import KoSummaryWidgets from './widgets/KoSummaryWidgets';
-  import {
-    ALL_TIME_COUNTS,
-    LAST_7_DAYS_COUNTS,
-    LAST_30_DAYS_COUNTS,
-    LAST_60_DAYS_COUNTS,
-    LAST_X_TOKENS,
-    LAST_X_EDITIONS,
-    LAST_X_AUCTION_EVENTS,
-    CURRENT_MONTHS_DAYS_COUNTS, LAST_MONTHS_DAYS_COUNTS
-  } from '../queries';
-  import KoTodayWidgets from './widgets/KoTodayWidgets';
-  import WidgetsBrand from './widgets/WidgetsBrand';
-  import MainChartExample from './charts/MainChartExample';
+    import moment from 'moment';
+    import MonthWidgets from './widgets/MonthWidgets';
+    import KoSummaryWidgets from './widgets/KoSummaryWidgets';
+    import {
+        ALL_TIME_COUNTS,
+        LAST_7_DAYS_COUNTS,
+        LAST_30_DAYS_COUNTS,
+        LAST_60_DAYS_COUNTS,
+        LAST_X_TOKENS,
+        LAST_X_EDITIONS,
+        LAST_X_AUCTION_EVENTS,
+        CURRENT_MONTHS_DAYS_COUNTS, LAST_MONTHS_DAYS_COUNTS
+    } from '../queries';
+    import KoTodayWidgets from './widgets/KoTodayWidgets';
+    import WidgetsBrand from './widgets/WidgetsBrand';
+    import MainChartExample from './charts/MainChartExample';
+    import CChartBarSimple from "./charts/CChartBarSimple";
+    import CChartBarExample from "./charts/CChartBarExample";
 
-  export default {
-    name: 'Dashboard',
-    components: {
-      MainChartExample,
-      WidgetsBrand,
-      KoSummaryWidgets,
-      MonthWidgets,
-      KoTodayWidgets,
-    },
-    data() {
-      return {
-        selected: 'Month',
-        currentMonthName: moment().format('MMM'),
-        lastMonthName: moment().subtract(1, 'months').format('MMM'),
-      };
-    },
-    methods: {
-      color(value) {
-        let $color;
-        if (value <= 25) {
-          $color = 'info';
-        } else if (value > 25 && value <= 50) {
-          $color = 'success';
-        } else if (value > 50 && value <= 75) {
-          $color = 'warning';
-        } else if (value > 75 && value <= 100) {
-          $color = 'danger';
-        }
-        return $color;
-      }
-    },
-    apollo: {
-      last7Counts: LAST_7_DAYS_COUNTS,
-      last30Counts: LAST_30_DAYS_COUNTS,
-      last60Counts: LAST_60_DAYS_COUNTS,
-      allTimeCounts: ALL_TIME_COUNTS,
-      lastMonthCounts: LAST_MONTHS_DAYS_COUNTS(),
-      currentMonthCounts: CURRENT_MONTHS_DAYS_COUNTS(),
-      lastXTokens: LAST_X_TOKENS,
-      lastXEditions: LAST_X_EDITIONS,
-      lastXAuctionEvents: LAST_X_AUCTION_EVENTS,
-    },
-  };
+    export default {
+        name: 'Dashboard',
+        components: {
+            CChartBarExample,
+            CChartBarSimple,
+            MainChartExample,
+            WidgetsBrand,
+            KoSummaryWidgets,
+            MonthWidgets,
+            KoTodayWidgets,
+        },
+        data() {
+            return {
+                selected: 'Month',
+                currentMonthName: moment().format('MMM'),
+                lastMonthName: moment().subtract(1, 'months').format('MMM'),
+            };
+        },
+        methods: {
+            color(value) {
+                let $color;
+                if (value <= 25) {
+                    $color = 'info';
+                } else if (value > 25 && value <= 50) {
+                    $color = 'success';
+                } else if (value > 50 && value <= 75) {
+                    $color = 'warning';
+                } else if (value > 75 && value <= 100) {
+                    $color = 'danger';
+                }
+                return $color;
+            }
+        },
+        apollo: {
+            last7Counts: LAST_7_DAYS_COUNTS,
+            last30Counts: LAST_30_DAYS_COUNTS,
+            last60Counts: LAST_60_DAYS_COUNTS,
+            allTimeCounts: ALL_TIME_COUNTS,
+            lastMonthCounts: LAST_MONTHS_DAYS_COUNTS(),
+            currentMonthCounts: CURRENT_MONTHS_DAYS_COUNTS(),
+            lastXTokens: LAST_X_TOKENS,
+            lastXEditions: LAST_X_EDITIONS,
+            lastXAuctionEvents: LAST_X_AUCTION_EVENTS,
+        },
+    };
 </script>

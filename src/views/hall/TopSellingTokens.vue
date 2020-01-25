@@ -3,7 +3,7 @@
     <CCard>
       <CCardHeader>
         <CIcon name="cil-dollar"/>
-        Top 10 Tokens (per day)
+        Top 10 Tokens
       </CCardHeader>
       <CCardBody>
         <CDataTable
@@ -21,7 +21,8 @@
             </div>
           </td>
           <td slot="name" slot-scope="{item}" class="text-left d-none d-sm-table-cell">
-            <div>{{item.highestValueToken.metadata.name}}</div>
+            <span class="text-primary">{{item.highestValueToken.metadata.name}}</span>
+            <span class="text-muted ml-2">by {{item.highestValueToken.metadata.artist}}</span>
           </td>
           <td slot="sales" slot-scope="{item}">
             <div class="clearfix">

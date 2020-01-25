@@ -192,7 +192,7 @@ export const HIGHEST_TOKEN_PER_DAY = gql`
                 metadata {
                     name
                     image
-                    scarcity
+                    artist
                 }
             }
         }

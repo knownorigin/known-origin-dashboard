@@ -1,7 +1,7 @@
 <template>
   <CChartBar
     :datasets="defaultDatasets"
-    labels="months"
+    :labels="['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']"
   />
 </template>
 
@@ -15,9 +15,9 @@ export default {
     defaultDatasets () {
       return [
         {
-          label: 'GitHub Commits',
-          backgroundColor: '#f87979',
-          data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+          label: 'primary sales in USD',
+          backgroundColor: '#5165FF',
+          data: [649, 482, 2103, 1154, 939, 416, 472, 5462, 3230, 4488, 5286, 24861],
         }
       ]
     }
