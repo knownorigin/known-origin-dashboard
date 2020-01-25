@@ -13,7 +13,9 @@
                     <CCol sm="6" lg="6">
                         <h4>Cumulative sales (ETH)</h4>
                         <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
-                        <MainChartExample :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+                        <div>
+                            <MainChartExample :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+                        </div>
                     </CCol>
                     <CCol sm="6" lg="6">
                         <h4>Monthly Growth</h4>
@@ -42,7 +44,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXTokens[0].metadata.name }}</div>
-                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small">{{ lastXTokens[0].primaryValueInEth }} ETH</div>
                         <div class="small text-muted mt-2">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from')
                             }}
@@ -58,7 +60,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) |
                             moment('from') }}
                         </div>
@@ -73,7 +75,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
-                        <div class="text-dark">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small">
                             {{ lastXAuctionEvents[0].ethValue }} ETH<br/>
                             {{ lastXAuctionEvents[0].name }}
@@ -85,13 +87,6 @@
                 </CCard>
             </CCol>
         </CRow>
-
-        <CCard>
-            <CCardBody>
-                <h4>Last seven days</h4>
-                <KoSummaryWidgets :ko-data="last7Counts"/>
-            </CCardBody>
-        </CCard>
 
         <CCard>
             <CCardBody>
@@ -109,6 +104,14 @@
 
         <WidgetsBrand/>
 
+        <CCard>
+            <CCardBody>
+                <h4>Last seven days</h4>
+                <KoSummaryWidgets :ko-data="last7Counts"/>
+            </CCardBody>
+        </CCard>
+
+        
         <!--<h4>Last 7 days</h4>-->
         <!--<KoSummaryWidgets :ko-data="last7Counts"/>-->
 

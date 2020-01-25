@@ -48,9 +48,9 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="danger"
-          right-header="300"
+          right-header="334"
           right-footer="followers"
-          left-header="125"
+          left-header="126"
           left-footer="posts"
         >
           <CIcon

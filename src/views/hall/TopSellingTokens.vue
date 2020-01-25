@@ -3,31 +3,34 @@
     <CCard>
       <CCardHeader>
         <CIcon name="cil-dollar"/>
-        Top 10 Tokens
+        Top 25 Tokens
       </CCardHeader>
       <CCardBody>
         <CDataTable
                 class="mb-0 table-outline"
                 hover
-                :items="highestTokenPerDay"
+                :items="topTokens"
                 :fields="tableFields"
                 head-color="light"
-                no-sorting v-if="highestTokenPerDay">
+                no-sorting v-if="topTokens">
           <td slot="avatar" class="text-center" slot-scope="{item}">
             <div class="c-avaLtar">
-              <a :href="'https://knownorigin.io/token/' + item.highestValueToken.tokenId" target="_blank">
-                <img :src="item.highestValueToken.metadata.image" style="max-height: 50px; vertical-align: center" :alt="item.highestValueToken.metadata.name">
+              <a :href="'https://knownorigin.io/token/' + item.tokenId" target="_blank">
+                <img :src="item.metadata.image" style="max-height: 100px; vertical-align: center" :alt="item.metadata.name">
               </a>
             </div>
           </td>
           <td slot="name" slot-scope="{item}" class="text-left d-none d-sm-table-cell">
-            <span class="text-primary">{{item.highestValueToken.metadata.name}}</span>
-            <span class="text-muted ml-2">by {{item.highestValueToken.metadata.artist}}</span>
+            <a :href="'https://knownorigin.io/token/' + item.tokenId" target="_blank">
+              <span class="text-primary">{{item.metadata.name}}</span>
+              <span class="text-muted ml-1">by {{item.metadata.artist}}</span>
+            </a>
           </td>
           <td slot="sales" slot-scope="{item}">
             <div class="clearfix">
-              <strong>{{item.highestValueInEth}}</strong> ETH
-              <div class="small text-muted">{{item.date}}</div>
+              <strong class="font-2xl">{{item.primaryValueInEth}}</strong> ETH
+              <div class="small">{{new Date(item.birthTimestamp * 1000).toLocaleDateString()}}</div>
+              <div class="badge badge-dark">ID {{item.tokenId}}</div>
             </div>
           </td>
         </CDataTable>
@@ -37,7 +40,7 @@
 </template>
 
 <script>
-  import {HIGHEST_TOKEN_PER_DAY} from "../../queries";
+  import {TOP_TOKENS} from "../../queries";
 
   export default {
     name: 'TopSellingTokens',
@@ -51,7 +54,7 @@
       };
     },
     apollo: {
-      highestTokenPerDay: HIGHEST_TOKEN_PER_DAY,
+      topTokens: TOP_TOKENS,
     },
 
     //https://knownorigin.io/api/artist/all

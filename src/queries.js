@@ -199,6 +199,21 @@ export const HIGHEST_TOKEN_PER_DAY = gql`
     }
 `;
 
+export const TOP_TOKENS = gql`
+    {
+        topTokens: tokens(first:25, orderBy: primaryValueInEth, orderDirection:desc) {
+            tokenId
+            primaryValueInEth
+            birthTimestamp
+            metadata {
+                name
+                image
+                artist
+            }
+        }
+    }
+`
+
 export const LAST_X_TOKENS = gql`
     {
         lastXTokens: tokens(first: 1, orderBy: birthTimestamp, orderDirection: desc) {
