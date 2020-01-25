@@ -111,7 +111,7 @@
             </CCardBody>
         </CCard>
 
-        
+
         <!--<h4>Last 7 days</h4>-->
         <!--<KoSummaryWidgets :ko-data="last7Counts"/>-->
 

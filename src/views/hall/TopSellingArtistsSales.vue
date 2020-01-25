@@ -3,7 +3,7 @@
         <CCard>
             <CCardHeader>
                 <CIcon name="cil-dollar"/>
-                Top 100 Artists (Total Sales)
+                Top 100 Artists by Sales
             </CCardHeader>
             <CCardBody>
                 <CDataTable
@@ -27,7 +27,7 @@
                     </td>
                     <td slot="sales" slot-scope="{item}">
                         <div class="clearfix">
-                            <strong>{{item.salesCount}} sales</strong>
+                            <strong class="font-2xl">{{item.salesCount}}</strong> sales
                             <div class="small text-muted">{{item.totalValueInEth}} ETH</div>
                         </div>
                     </td>

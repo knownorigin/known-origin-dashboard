@@ -3,7 +3,7 @@
         <CCard>
             <CCardHeader>
                 <CIcon name="cil-dollar"/>
-                Top 100 Artists (Total ETH)
+                Top 100 Artists by ETH
             </CCardHeader>
             <CCardBody>
                 <CDataTable
@@ -27,12 +27,11 @@
                     </td>
                     <td slot="sales" slot-scope="{item}">
                         <div class="clearfix">
-                            <strong>{{item.totalValueInEth}}</strong> ETH
+                            <strong class="font-2xl">{{item.totalValueInEth}}</strong> ETH
                             <div class="small text-muted">{{item.salesCount}} sales</div>
                         </div>
                     </td>
                     <td slot="highest" slot-scope="{item}">
-
                         <strong>{{item.highestSaleValueInEth}}</strong> ETH
                     </td>
                 </CDataTable>
