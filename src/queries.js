@@ -153,11 +153,8 @@ export const TOP_SELLING_ARTISTS = gql`
     {
         topSellingArtists: artists(first: 100, orderBy: totalValueInEth, orderDirection: desc) {
             address
-            supply
             totalValueInEth
-            editionsCount
             salesCount
-            giftsCount
             highestSaleValueInEth
             firstEditionTimestamp
             lastEditionTimestamp
@@ -169,17 +166,28 @@ export const TOP_SELLING_ARTISTS_SALES = gql`
     {
         topSellingArtistsSales: artists(first: 100, orderBy: salesCount, orderDirection: desc) {
             address
-            supply
             totalValueInEth
-            editionsCount
             salesCount
-            giftsCount
             highestSaleValueInEth
             firstEditionTimestamp
             lastEditionTimestamp
         }
     }
 `;
+
+export const EDITIONS_BY_ARTISTS = gql`
+    {
+        editionsByArtists: artists(first: 1000, orderBy: editionsCount, orderDirection: desc) {
+            address
+            supply
+            editionsCount
+            salesCount
+            giftsCount
+            firstEditionTimestamp
+            lastEditionTimestamp
+        }
+    }
+`
 
 
 export const HIGHEST_TOKEN_PER_DAY = gql`

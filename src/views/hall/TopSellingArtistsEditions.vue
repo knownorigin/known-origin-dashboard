@@ -2,17 +2,18 @@
     <div>
         <CCard>
             <CCardHeader>
-                <CIcon name="cil-dollar"/>
-                Top 100 Artists by ETH
+                <CIcon name="cil-jigsaw"/>
+                Top Artists by Editions (KODA v2)
+                <strong>WORK-IN-PROGRESS - Don't trust yet...</strong>
             </CCardHeader>
             <CCardBody>
                 <CDataTable
                         class="mb-0 table-outline"
                         hover
-                        :items="topSellingArtists"
+                        :items="editionsByArtists"
                         :fields="tableFields"
                         head-color="light"
-                        no-sorting v-if="topSellingArtists">
+                        no-sorting v-if="editionsByArtists">
                     <td slot="avatar" class="text-center" slot-scope="{item}">
                         <div class="c-avatar" v-if="artistMap && artistMap[item.address.toLowerCase()]">
                             <img :src="artistMap[item.address.toLowerCase()].logo" class="c-avatar-img" :alt="artistMap[item.address.toLowerCase()].name" style="max-height: 50px">
@@ -25,14 +26,23 @@
                             Editions: {{new Date(item.firstEditionTimestamp * 1000).toDateString()}} - {{new Date(item.lastEditionTimestamp * 1000).toDateString()}}
                         </div>
                     </td>
-                    <td slot="sales" slot-scope="{item}">
+                    <td slot="editions" slot-scope="{item}">
                         <div class="clearfix">
-                            <strong class="font-2xl">{{item.totalValueInEth}}</strong> ETH
+                            <strong class="font-2xl">{{item.editionsCount}}</strong> editions
+                            <div class="small text-muted"></div>
+                        </div>
+                    </td>
+                    <td slot="supply" slot-scope="{item}" class="d-none d-sm-table-cell">
+                        <div class="clearfix">
+                            <strong>{{item.supply}}</strong> supply
                             <div class="small text-muted">{{item.salesCount}} sales</div>
                         </div>
                     </td>
-                    <td slot="highest" slot-scope="{item}" class="d-none d-sm-table-cell">
-                        <strong>{{item.highestSaleValueInEth}}</strong> ETH
+                    <td slot="sold" slot-scope="{item}" class="d-none d-sm-table-cell">
+                        <div class="clearfix">
+                            <strong>{{ ((parseInt(item.salesCount) + parseInt(item.giftsCount)) / parseInt(item.supply) * 100).toFixed(0) }}</strong>%
+                            <div class="small text-muted">{{item.giftsCount}} gifts</div>
+                        </div>
                     </td>
                 </CDataTable>
             </CCardBody>
@@ -41,18 +51,19 @@
 </template>
 
 <script>
-    import {TOP_SELLING_ARTISTS} from "../../queries";
+    import {EDITIONS_BY_ARTISTS} from "../../queries";
     import {mapState} from "vuex";
 
     export default {
-        name: 'TopSellingArtists',
+        name: 'TopSellingArtistsEditions',
         data() {
             return {
                 tableFields: [
                     {key: 'avatar', label: '', _classes: 'text-center'},
                     {key: 'user', _classes: 'd-none d-sm-table-cell'},
-                    {key: 'sales'},
-                    {key: 'highest'},
+                    {key: 'editions'},
+                    {key: 'supply'},
+                    {key: 'sold'},
                 ],
             };
         },
@@ -62,7 +73,7 @@
             ]),
         },
         apollo: {
-            topSellingArtists: TOP_SELLING_ARTISTS,
+            editionsByArtists: EDITIONS_BY_ARTISTS,
         },
     };
 </script>

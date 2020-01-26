@@ -30,6 +30,12 @@ export default [
         to: '/hall/tokens',
         icon: 'cil-moon'
       },
+      {
+        _name: 'CSidebarNavItem',
+        name: 'Top Artists by Editions',
+        to: '/hall/editions',
+        icon: 'cil-puzzle'
+      },
       // {
       //   _name: 'CSidebarNavTitle',
       //   _children: ['Components']

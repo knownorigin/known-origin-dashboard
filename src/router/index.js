@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import TopSellingArtists from "../views/hall/TopSellingArtists";
 import TopSellingTokens from "../views/hall/TopSellingTokens";
 import TopSellingArtistsSales from "../views/hall/TopSellingArtistsSales";
+import TopSellingArtistsEditions from "../views/hall/TopSellingArtistsEditions";
 
 // Containers
 const TheContainer = () => import('@/containers/TheContainer')
@@ -104,6 +105,11 @@ function configRoutes () {
               path: 'tokens',
               name: 'Tokens',
               component: TopSellingTokens
+            },
+            {
+              path: 'editions',
+              name: 'Editions',
+              component: TopSellingArtistsEditions
             }
           ]
         },

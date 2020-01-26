@@ -60,7 +60,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2">{{ lastXEditions[0].metadata.artist }}</div>
                         <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) |
                             moment('from') }}
                         </div>
@@ -75,7 +75,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
-                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2">{{ lastXAuctionEvents[0].metadata.artist }}</div>
                         <div class="small">
                             {{ lastXAuctionEvents[0].ethValue }} ETH<br/>
                             {{ lastXAuctionEvents[0].name }}

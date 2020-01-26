@@ -31,8 +31,7 @@
                             <div class="small text-muted">{{item.totalValueInEth}} ETH</div>
                         </div>
                     </td>
-                    <td slot="highest" slot-scope="{item}">
-
+                    <td slot="highest" slot-scope="{item}" class="d-none d-sm-table-cell">
                         <strong>{{item.highestSaleValueInEth}}</strong> ETH
                     </td>
                 </CDataTable>
