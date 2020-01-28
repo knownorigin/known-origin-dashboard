@@ -4,7 +4,6 @@
             <CCardHeader>
                 <CIcon name="cil-jigsaw"/>
                 Top Artists by Editions (KODA v2)
-                <strong>WORK-IN-PROGRESS - Don't trust yet...</strong>
             </CCardHeader>
             <CCardBody>
                 <CDataTable
