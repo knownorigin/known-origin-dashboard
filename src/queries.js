@@ -7,7 +7,6 @@ export const TODAY_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -24,7 +23,6 @@ export const LAST_WEEK_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -41,7 +39,6 @@ export const LAST_7_DAYS_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -58,7 +55,6 @@ export const LAST_30_DAYS_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -75,7 +71,6 @@ export const LAST_60_DAYS_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -92,7 +87,6 @@ export const ALL_TIME_COUNTS = gql`
             date
             transferCount
             salesCount
-            giftsCount
             editionsCount
             bidsAcceptedCount
             bidsPlacedCount
@@ -111,7 +105,6 @@ export const CURRENT_MONTHS_DAYS_COUNTS = () => {
                 date
                 transferCount
                 salesCount
-                giftsCount
                 editionsCount
                 bidsAcceptedCount
                 bidsPlacedCount
@@ -137,7 +130,6 @@ export const LAST_MONTHS_DAYS_COUNTS = () => {
                 date
                 transferCount
                 salesCount
-                giftsCount
                 editionsCount
                 bidsAcceptedCount
                 bidsPlacedCount
@@ -182,7 +174,7 @@ export const EDITIONS_BY_ARTISTS = gql`
             supply
             editionsCount
             salesCount
-            giftsCount
+            issuedCount
             firstEditionTimestamp
             lastEditionTimestamp
         }

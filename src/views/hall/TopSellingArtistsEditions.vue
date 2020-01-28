@@ -35,13 +35,14 @@
                     <td slot="supply" slot-scope="{item}" class="d-none d-sm-table-cell">
                         <div class="clearfix">
                             <strong>{{item.supply}}</strong> supply
-                            <div class="small text-muted">{{item.salesCount}} sales</div>
+                            <div class="small text-muted">{{item.issuedCount}} issued</div>
+                            <div class="small text-muted">{{parseInt(item.issuedCount) - parseInt(item.salesCount)}} gifts</div>
                         </div>
                     </td>
                     <td slot="sold" slot-scope="{item}" class="d-none d-sm-table-cell">
-                        <div class="clearfix">
-                            <strong>{{ ((parseInt(item.salesCount) + parseInt(item.giftsCount)) / parseInt(item.supply) * 100).toFixed(0) }}</strong>%
-                            <div class="small text-muted">{{item.giftsCount}} gifts</div>
+                        <div class="clearfix" v-if="parseInt(item.issuedCount) && parseInt(item.supply)">
+                            <strong>{{ (parseInt(item.issuedCount) / parseInt(item.supply) * 100).toFixed(0) }}</strong>%
+                            <div class="small text-muted">{{item.salesCount}} sales</div>
                         </div>
                     </td>
                 </CDataTable>

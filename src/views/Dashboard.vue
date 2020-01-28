@@ -44,7 +44,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXTokens[0].metadata.name }}</div>
-                        <div class="text-dark mb-2">{{ lastXTokens[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2" v-if="lastXTokens && lastXTokens.length > 0 && lastXTokens[0].metadata">{{ lastXTokens[0].metadata.artist }}</div>
                         <div class="small">{{ lastXTokens[0].primaryValueInEth }} ETH</div>
                         <div class="small text-muted mt-2">{{ (lastXTokens[0].birthTimestamp * 1000) | moment('from')
                             }}
@@ -60,7 +60,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXEditions[0].metadata.name }}</div>
-                        <div class="text-dark mb-2">{{ lastXEditions[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2" v-if="lastXEditions && lastXEditions.length > 0 && lastXEditions[0].metadata">{{ lastXEditions[0].metadata.artist }}</div>
                         <div class="small text-muted mt-2">{{ (lastXEditions[0].createdTimestamp * 1000) |
                             moment('from') }}
                         </div>
@@ -75,7 +75,7 @@
                     </a>
                     <CCardFooter>
                         <div class="text-primary">{{ lastXAuctionEvents[0].edition.metadata.name }}</div>
-                        <div class="text-dark mb-2">{{ lastXAuctionEvents[0].metadata.artist }}</div>
+                        <div class="text-dark mb-2" v-if="lastXAuctionEvents && lastXAuctionEvents.length > 0 && lastXAuctionEvents[0].metadata">{{ lastXAuctionEvents[0].metadata.artist }}</div>
                         <div class="small">
                             {{ lastXAuctionEvents[0].ethValue }} ETH<br/>
                             {{ lastXAuctionEvents[0].name }}
