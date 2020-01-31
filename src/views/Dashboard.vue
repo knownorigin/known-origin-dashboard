@@ -18,7 +18,7 @@
                         </div>
                     </CCol>
                     <CCol sm="6" lg="6">
-                        <h4>Monthly Growth</h4>
+                        <h4>Monthly Revenue (USD)</h4>
                         <div class="small text-muted mt-1 mb-4">last 12 months</div>
                         <div>
                             <CChartBarExample/>
