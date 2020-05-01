@@ -4,7 +4,7 @@
       <CCol md="3" sm="6">
         <CWidgetBrand
           color="facebook"
-          right-header="481"
+          right-header="636"
           right-footer="community"
           left-header="2"
           left-footer="years"
@@ -17,7 +17,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[50, 70, 150, 250, 443]"
+            :data-points="[50, 70, 150, 250, 443, 636]"
             label="Friends"
             labels="months"
           />
@@ -26,9 +26,9 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="twitter"
-          right-header="3.1k"
+          right-header="4.2k"
           right-footer="followers"
-          left-header="6.4K"
+          left-header="7.1K"
           left-footer="tweets"
         >
           <CIcon
@@ -39,7 +39,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[1, 13, 9, 17, 34, 41, 38]"
+            :data-points="[1, 13, 9, 17, 34, 41, 38, 42]"
             label="Followers"
             labels="months"
           />
@@ -48,7 +48,7 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="danger"
-          right-header="334"
+          right-header="501"
           right-footer="followers"
           left-header="126"
           left-footer="posts"
@@ -61,7 +61,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[10, 33, 44, 200, 300]"
+            :data-points="[10, 33, 44, 200, 300, 500]"
             label="Contracts"
             labels="months"
           />
@@ -69,9 +69,9 @@
        </CCol>
        <CCol md="3" sm="6">
         <CWidgetBrand
-          right-header="649,655"
+          right-header="382,366"
           right-footer="alexa rank"
-          left-header="3.2K"
+          left-header="6.2K"
           left-footer="visits"
           color="warning"
         >
