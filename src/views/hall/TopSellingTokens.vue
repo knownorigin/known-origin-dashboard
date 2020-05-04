@@ -13,10 +13,10 @@
                 :fields="tableFields"
                 head-color="light"
                 no-sorting v-if="topTokens">
-          <td slot="avatar" class="text-center" slot-scope="{item}">
+          <td slot="avatar" class="text-center" slot-scope="{item}" width="450">
             <div class="c-avaLtar">
               <a :href="'https://knownorigin.io/token/' + item.tokenId" target="_blank">
-                <img :src="item.metadata.image" style="max-height: 100px; vertical-align: center" :alt="item.metadata.name">
+                <edition-asset :item="item"></edition-asset>
               </a>
             </div>
           </td>
@@ -41,9 +41,11 @@
 
 <script>
   import {TOP_TOKENS} from "../../queries";
+  import EditionAsset from "../ko/EditionAsset";
 
   export default {
     name: 'TopSellingTokens',
+    components: {EditionAsset},
     data() {
       return {
         tableFields: [
