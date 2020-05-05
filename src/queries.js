@@ -205,6 +205,7 @@ export const TOP_TOKENS = gql`
             tokenId
             primaryValueInEth
             birthTimestamp
+            editionNumber
             metadata {
                 name
                 image

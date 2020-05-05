@@ -4,6 +4,13 @@ import router from './router';
 import store from './store';
 import CoreuiVue from '@coreui/vue';
 import {iconsSet as icons} from './assets/icons/icons.js';
+import VueLazyload from 'vue-lazyload';
+
+Vue.use(VueLazyload, {
+    // set observer to true
+    observer: true,
+    lazyComponent: true,
+});
 
 Vue.config.performance = true;
 Vue.use(CoreuiVue);

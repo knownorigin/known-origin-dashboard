@@ -1,40 +1,50 @@
 <template>
-    <video v-if="isVideo"
-           width="100%"
-           height="100%"
-           autoplay="autoplay"
-           loop="loop"
-           controls="controls"
-           controlsList="nodownload"
-           muted="muted">
-        <source :src="item.metadata.image" type="video/webm">
-    </video>
-    <img v-else :src="item.metadata.image" style="max-height: 100px; vertical-align: center" :alt="item.metadata.name">
+    <span>
+        <video v-if="isVideo"
+               width="100%"
+               height="100%"
+               autoplay="autoplay"
+               loop="loop"
+               controls="controls"
+               controlsList="nodownload"
+               muted="muted">
+            <source :src="`https://cdn.knownorigin.io/cdn/images/network/1/edition/${item.editionNumber}`" type="video/webm">
+        </video>
+        <span v-else  v-lazy-container="{ selector: 'img' }">
+          <img
+                  :data-src="`https://cdn.knownorigin.io/cdn/images/network/1/edition/${item.editionNumber}`"
+                  data-loading="https://svgshare.com/i/Ko9.svg"
+                  style="max-height: 300px; max-width: 300px; vertical-align: center"
+                  :alt="item.metadata.name"
+          >
+      </span>
+
+    </span>
 </template>
 
 <script>
-  import * as _ from "lodash";
+    import * as _ from "lodash";
 
-  const isFileType = (imageUri, extension) => {
-    // Fall back to trying to work out if its based on file extension
-    // Used when we only have token data and not edition data
-    return imageUri && _.indexOf([extension], _.last(imageUri.split('.')).toLowerCase()) > -1;
-  };
+    const isFileType = (imageUri, extension) => {
+        // Fall back to trying to work out if its based on file extension
+        // Used when we only have token data and not edition data
+        return imageUri && _.indexOf([extension], _.last(imageUri.split('.')).toLowerCase()) > -1;
+    };
 
-  const isWebM = (imageUri) => {
-    return isFileType(imageUri, 'webm');
-  };
+    const isWebM = (imageUri) => {
+        return isFileType(imageUri, 'webm');
+    };
 
-  export default {
-    name: 'editionAsset',
-    props: ['item'],
-    components: {},
-    computed: {
-      isVideo() {
-        return isWebM(this.item.metadata.image);
-      },
-    }
-  };
+    export default {
+        name: 'editionAsset',
+        props: ['item'],
+        components: {},
+        computed: {
+            isVideo() {
+                return isWebM(this.item.metadata.image);
+            },
+        }
+    };
 </script>
 
 <style scoped lang="scss">
