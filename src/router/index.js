@@ -92,6 +92,11 @@ function configRoutes () {
           },
           children: [
             {
+              path: 'tokens',
+              name: 'Tokens',
+              component: TopSellingTokens
+            },
+            {
               path: 'artists',
               name: 'Artists',
               component: TopSellingArtists
@@ -100,11 +105,6 @@ function configRoutes () {
               path: 'sales',
               name: 'Sales',
               component: TopSellingArtistsSales
-            },
-            {
-              path: 'tokens',
-              name: 'Tokens',
-              component: TopSellingTokens
             },
             {
               path: 'editions',

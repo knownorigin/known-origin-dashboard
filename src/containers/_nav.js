@@ -14,21 +14,25 @@ export default [
       },
       {
         _name: 'CSidebarNavItem',
+        name: 'Top Selling Tokens',
+        to: '/hall/tokens',
+        icon: 'cil-dollar'
+      },
+      {
+        _name: 'CSidebarNavTitle',
+        _children: ['Artists']
+      },
+      {
+        _name: 'CSidebarNavItem',
         name: 'Top Artists by ETH',
         to: '/hall/artists',
-        icon: 'cil-dollar'
+        icon: 'cil-puzzle'
       },
       {
         _name: 'CSidebarNavItem',
         name: 'Top Artists by Sales',
         to: '/hall/sales',
         icon: 'cil-puzzle'
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Top Selling Tokens',
-        to: '/hall/tokens',
-        icon: 'cil-moon'
       },
       {
         _name: 'CSidebarNavItem',
