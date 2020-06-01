@@ -17,7 +17,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[50, 70, 150, 250, 443, 636]"
+            :data-points="[50, 70, 150, 250, 443, 636, 650]"
             label="Friends"
             labels="months"
           />
@@ -26,9 +26,9 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="twitter"
-          right-header="4.2k"
+          right-header="4.5k"
           right-footer="followers"
-          left-header="7.1K"
+          left-header="7.9K"
           left-footer="tweets"
         >
           <CIcon
@@ -39,7 +39,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[1, 13, 9, 17, 34, 41, 38, 42]"
+            :data-points="[1, 13, 9, 17, 34, 41, 38, 42, 45]"
             label="Followers"
             labels="months"
           />
@@ -48,9 +48,9 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="danger"
-          right-header="501"
+          right-header="565"
           right-footer="followers"
-          left-header="126"
+          left-header="141"
           left-footer="posts"
         >
           <CIcon
@@ -61,7 +61,7 @@
           <CChartLineSimple
             class="c-chart-brand"
             background-color="rgba(255,255,255,.1)"
-            :data-points="[10, 33, 44, 200, 300, 500]"
+            :data-points="[10, 33, 44, 200, 300, 500, 565]"
             label="Contracts"
             labels="months"
           />
@@ -69,7 +69,7 @@
        </CCol>
        <CCol md="3" sm="6">
         <CWidgetBrand
-          right-header="382,366"
+          right-header="281,395"
           right-footer="alexa rank"
           left-header="6.2K"
           left-footer="visits"
