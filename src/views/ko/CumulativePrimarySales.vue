@@ -12,7 +12,7 @@ import { CChartLine } from '@coreui/coreui-vue-chartjs'
 import { getColor, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities'
 
 export default {
-  name: 'MainChartExample',
+  name: 'CumulativePrimarySales',
   components: {
     CChartLine
   },
@@ -82,7 +82,7 @@ export default {
               beginAtZero: true,
               maxTicksLimit: 3,
               stepSize: 50,
-              max: 1500
+              max: 1700
             },
             gridLines: {
               display: true

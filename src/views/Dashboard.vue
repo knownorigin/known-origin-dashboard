@@ -11,17 +11,17 @@
             <CCardBody>
                 <CRow>
                     <CCol sm="6" lg="6">
-                        <h4>Cumulative sales (ETH)</h4>
+                        <h4>Cumulative sales primary (ETH)</h4>
                         <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
                         <div>
-                            <MainChartExample :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+                            <CumulativePrimarySales :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
                         </div>
                     </CCol>
                     <CCol sm="6" lg="6">
-                        <h4>Monthly Revenue (USD)</h4>
+                        <h4>Monthly revenue (USD)</h4>
                         <div class="small text-muted mt-1 mb-4">last 12 months</div>
                         <div>
-                            <CChartBarExample/>
+                            <SalesGraphs/>
                         </div>
                     </CCol>
                 </CRow>
@@ -127,20 +127,21 @@
         LAST_X_TOKENS,
         LAST_X_EDITIONS,
         LAST_X_AUCTION_EVENTS,
-        CURRENT_MONTHS_DAYS_COUNTS, LAST_MONTHS_DAYS_COUNTS
+        CURRENT_MONTHS_DAYS_COUNTS,
+        LAST_MONTHS_DAYS_COUNTS
     } from '../queries';
     import KoTodayWidgets from './widgets/KoTodayWidgets';
     import WidgetsBrand from './widgets/WidgetsBrand';
-    import MainChartExample from './charts/MainChartExample';
+    import CumulativePrimarySales from './ko/CumulativePrimarySales';
     import CChartBarSimple from "./charts/CChartBarSimple";
-    import CChartBarExample from "./charts/CChartBarExample";
+    import SalesGraphs from "./ko/SalesGraph";
 
     export default {
         name: 'Dashboard',
         components: {
-            CChartBarExample,
+            SalesGraphs,
             CChartBarSimple,
-            MainChartExample,
+            CumulativePrimarySales,
             WidgetsBrand,
             KoSummaryWidgets,
             MonthWidgets,
