@@ -117,8 +117,8 @@
 
 <script>
     import moment from 'moment';
-    import MonthWidgets from './widgets/MonthWidgets';
-    import KoSummaryWidgets from './widgets/KoSummaryWidgets';
+    import MonthWidgets from './ko/MonthWidgets';
+    import KoSummaryWidgets from './ko/KoSummaryWidgets';
     import {
         ALL_TIME_COUNTS,
         LAST_7_DAYS_COUNTS,
@@ -130,8 +130,8 @@
         CURRENT_MONTHS_DAYS_COUNTS,
         LAST_MONTHS_DAYS_COUNTS
     } from '../queries';
-    import KoTodayWidgets from './widgets/KoTodayWidgets';
-    import WidgetsBrand from './widgets/WidgetsBrand';
+    import KoTodayWidgets from './ko/KoTodayWidgets';
+    import WidgetsBrand from './ko/SocialWidgetsBrand';
     import CumulativePrimarySales from './ko/CumulativePrimarySales';
     import CChartBarSimple from "./charts/CChartBarSimple";
     import SalesGraphs from "./ko/SalesGraph";

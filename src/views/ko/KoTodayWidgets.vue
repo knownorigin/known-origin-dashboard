@@ -70,7 +70,7 @@
 </template>
 
 <script>
-    import {CChartLineSimple} from '../charts/index.js';
+    import {CChartLineSimple} from '../charts';
     import {LAST_WEEK_COUNTS, TODAY_COUNTS} from "../../queries";
 
     export default {

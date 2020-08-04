@@ -70,7 +70,7 @@
 </template>
 
 <script>
-  import {CChartLineSimple} from '../charts/index.js';
+  import {CChartLineSimple} from '../charts';
 
   export default {
     name: 'KoSummaryWidgets',

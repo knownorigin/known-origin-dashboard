@@ -66,7 +66,7 @@
 </template>
 
 <script>
-    import {CChartLineSimple, CChartBarSimple} from '../charts/index.js';
+    import {CChartLineSimple, CChartBarSimple} from '../charts';
 
     export default {
         name: 'MonthWidgets',
