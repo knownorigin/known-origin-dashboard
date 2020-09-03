@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "known-origin-insights",
     "public": "dist",
     "ignore": [
       "firebase.json",
