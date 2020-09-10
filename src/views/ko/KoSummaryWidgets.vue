@@ -66,6 +66,40 @@
                 </CWidgetDropdown>
             </CCol>
         </CRow>
+<!--        <CRow>-->
+<!--          <CCol sm="6" lg="3">-->
+<!--            <CWidgetDropdown color="primary" :header="monthBidVolumeTotal()" text="Bidding Volume" v-if="koData">-->
+<!--              <template #default></template>-->
+<!--              <template #footer>-->
+<!--                <CChartLineSimple-->
+<!--                    style="height:70px"-->
+<!--                    background-color="rgba(255,255,255,.2)"-->
+<!--                    :data-points="monthBidVolume()"-->
+<!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+<!--                    point-hover-background-color="primary"-->
+<!--                    label="Transfers"-->
+<!--                    labels="Transfers"-->
+<!--                />-->
+<!--              </template>-->
+<!--            </CWidgetDropdown>-->
+<!--          </CCol>-->
+<!--          <CCol sm="6" lg="3">-->
+<!--            <CWidgetDropdown color="primary" :header="monthBidPlacedTotal()" text="Bid Placed" v-if="koData">-->
+<!--              <template #default></template>-->
+<!--              <template #footer>-->
+<!--                <CChartLineSimple-->
+<!--                    style="height:70px"-->
+<!--                    background-color="rgba(255,255,255,.2)"-->
+<!--                    :data-points="monthBidPlacedVolume()"-->
+<!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+<!--                    point-hover-background-color="primary"-->
+<!--                    label="Transfers"-->
+<!--                    labels="Transfers"-->
+<!--                />-->
+<!--              </template>-->
+<!--            </CWidgetDropdown>-->
+<!--          </CCol>-->
+<!--        </CRow>-->
     </div>
 </template>
 
@@ -92,6 +126,22 @@
       monthInSales() {
         if (!this.koData) return [];
         return this.koData.map(counts => counts.totalValueInEth).reverse();
+      },
+      monthBidVolumeTotal() {
+        if (!this.koData) return null;
+        return this.koData.reduce((accum, counts) => accum + parseFloat(counts.totalValuePlaceInBids), 0).toFixed(2).toString();
+      },
+      monthBidVolume() {
+        if (!this.koData) return [];
+        return this.koData.map(counts => counts.totalValuePlaceInBids).reverse();
+      },
+      monthBidPlacedTotal() {
+        if (!this.koData) return null;
+        return this.koData.reduce((accum, counts) => accum + parseFloat(counts.bidsPlacedCount), 0).toFixed(2).toString();
+      },
+      monthBidPlacedVolume() {
+        if (!this.koData) return [];
+        return this.koData.map(counts => counts.bidsPlacedCount).reverse();
       },
       monthInTransfersTotal() {
         if (!this.koData) return null;

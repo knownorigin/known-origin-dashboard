@@ -82,7 +82,7 @@ export default {
               beginAtZero: true,
               maxTicksLimit: 3,
               stepSize: 50,
-              max: 1700
+              max: 2000
             },
             gridLines: {
               display: true

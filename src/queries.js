@@ -111,6 +111,7 @@ export const CURRENT_MONTHS_DAYS_COUNTS = () => {
                 bidsRejectedCount
                 totalValueInEth
                 highestValueInEth
+                totalValuePlaceInBids
             }
         }
     `;
@@ -136,6 +137,7 @@ export const LAST_MONTHS_DAYS_COUNTS = () => {
                 bidsRejectedCount
                 totalValueInEth
                 highestValueInEth
+                totalValuePlaceInBids
             }
         }
     `;

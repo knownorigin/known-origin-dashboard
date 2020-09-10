@@ -20,7 +20,7 @@ export default new Vuex.Store({
             console.log('bootstrapping...');
 
             const artistMap = {};
-            axios.get(`https://knownorigin.io/api/artist/all`).then((res) => {
+            axios.get(`https://us-central1-known-origin-io.cloudfunctions.net/main/api/artist/all`).then((res) => {
                 res.data.forEach(a => {
                     a.ethAddress.forEach(add => artistMap[`${add.toLowerCase()}`] = a);
                 });
