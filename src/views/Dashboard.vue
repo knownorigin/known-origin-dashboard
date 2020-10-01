@@ -19,7 +19,7 @@
                     </CCol>
                     <CCol sm="6" lg="6">
                         <h4>Monthly revenue (USD)</h4>
-                        <div class="small text-muted mt-1 mb-4">last 12 months</div>
+                        <div class="small text-muted mt-1 mb-4">Secondary sales data from OpenSea</div>
                         <div>
                             <SalesGraphs/>
                         </div>
