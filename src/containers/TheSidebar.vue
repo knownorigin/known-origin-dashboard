@@ -24,7 +24,7 @@ export default {
   name: 'TheSidebar',
   data () {
     return {
-      minimize: false,
+      minimize: true,
       nav,
       show: 'responsive'
     }

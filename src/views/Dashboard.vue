@@ -35,7 +35,7 @@
             </CCardBody>
         </CCard>
 
-        <CRow class="mb-4">
+        <!-- <CRow class="mb-4">
             <CCol sm="4">
                 <CCard v-if="lastXTokens">
                     <CCardHeader>Last Sale</CCardHeader>
@@ -86,7 +86,7 @@
                     </CCardFooter>
                 </CCard>
             </CCol>
-        </CRow>
+        </CRow> -->
 
         <CCard>
             <CCardBody>
