@@ -27,8 +27,8 @@
                                 :data-points="weekInSales()"
                                 :options="{ elements: { line: { borderWidth: 2.5 }}}"
                                 point-hover-background-color="primary"
-                                label="Transfers"
-                                labels="Transfers"
+                                label="ETH"
+                                labels="ETH"
                         />
                     </template>
                 </CWidgetDropdown>
@@ -66,6 +66,24 @@
                 </CWidgetDropdown>
             </CCol>
         </CRow>
+        <CRow>
+          <CCol sm="6" lg="3">
+            <CWidgetDropdown color="warning" :header="todayCounts[0].bidsAcceptedCount" text="Offers Accepted" v-if="todayCounts">
+              <template #default></template>
+              <template #footer>
+                <CChartLineSimple
+                    style="height:70px"
+                    background-color="rgba(255,255,255,.2)"
+                    :data-points="weekInBidsAcceptedCount()"
+                    :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                    point-hover-background-color="warning"
+                    label="Offers Accepted"
+                    labels="Offers Accepted"
+                />
+              </template>
+            </CWidgetDropdown>
+          </CCol>
+        </CRow>
     </div>
 </template>
 
@@ -92,6 +110,10 @@
             weekInEditionsCount() {
                 if (!this.lastWeekCounts) return [];
                 return this.lastWeekCounts.map(counts => counts.editionsCount).reverse();
+            },
+            weekInBidsAcceptedCount() {
+                if (!this.lastWeekCounts) return [];
+                return this.lastWeekCounts.map(counts => counts.bidsAcceptedCount).reverse();
             },
         },
         apollo: {
