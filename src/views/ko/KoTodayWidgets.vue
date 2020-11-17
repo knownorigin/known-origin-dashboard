@@ -116,8 +116,6 @@
             </CWidgetDropdown>
           </CCol>
         </CRow>
-
-        {{ todayCounts[0].secondarySalesValue }}
     </div>
 </template>
 
