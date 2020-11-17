@@ -106,11 +106,27 @@
                 <CChartLineSimple
                     style="height:70px"
                     background-color="rgba(255,255,255,.2)"
-                    :data-points="weekInBidsRejecteddCount()"
+                    :data-points="weekInBidsRejectedCount()"
                     :options="{ elements: { line: { borderWidth: 2.5 }}}"
                     point-hover-background-color="primary"
                     label="Offers Rejected"
                     labels="Offers Rejected"
+                />
+              </template>
+            </CWidgetDropdown>
+          </CCol>
+          <CCol sm="6" lg="3">
+            <CWidgetDropdown color="danger" :header="todayCounts[0].secondarySalesValue" text="Secondary Sales Value" v-if="todayCounts">
+              <template #default></template>
+              <template #footer>
+                <CChartLineSimple
+                    style="height:70px"
+                    background-color="rgba(255,255,255,.2)"
+                    :data-points="dayInSecondarySalesValue()"
+                    :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                    point-hover-background-color="danger"
+                    label="Secondary Sales Value"
+                    labels="Secondary Sales Value"
                 />
               </template>
             </CWidgetDropdown>
@@ -151,9 +167,13 @@
                 if (!this.lastWeekCounts) return [];
                 return this.lastWeekCounts.map(counts => counts.bidsPlacedCount).reverse();
             },
-            weekInBidsRejecteddCount() {
+            weekInBidsRejectedCount() {
                 if (!this.lastWeekCounts) return [];
                 return this.lastWeekCounts.map(counts => counts.bidsRejectedCount).reverse();
+            },
+            dayInSecondarySalesValue() {
+                if (!this.todayCounts) return [];
+                return this.todayCounts.map(counts => counts.secondarySalesValue).reverse();
             },
         },
         apollo: {
