@@ -90,7 +90,7 @@
                 <CChartLineSimple
                     style="height:70px"
                     background-color="rgba(255,255,255,.2)"
-                    :data-points="weekInBidsAcceptedCount()"
+                    :data-points="weekInBidsMadeCount()"
                     :options="{ elements: { line: { borderWidth: 2.5 }}}"
                     point-hover-background-color="success"
                     label="Offers Made"
@@ -106,7 +106,7 @@
                 <CChartLineSimple
                     style="height:70px"
                     background-color="rgba(255,255,255,.2)"
-                    :data-points="weekInBidsAcceptedCount()"
+                    :data-points="weekInBidsRejecteddCount()"
                     :options="{ elements: { line: { borderWidth: 2.5 }}}"
                     point-hover-background-color="primary"
                     label="Offers Rejected"
@@ -146,6 +146,14 @@
             weekInBidsAcceptedCount() {
                 if (!this.lastWeekCounts) return [];
                 return this.lastWeekCounts.map(counts => counts.bidsAcceptedCount).reverse();
+            },
+            weekInBidsMadeCount() {
+                if (!this.lastWeekCounts) return [];
+                return this.lastWeekCounts.map(counts => counts.bidsPlacedCount).reverse();
+            },
+            weekInBidsRejecteddCount() {
+                if (!this.lastWeekCounts) return [];
+                return this.lastWeekCounts.map(counts => counts.bidsRejectedCount).reverse();
             },
         },
         apollo: {
