@@ -8,38 +8,38 @@ export default [
         to: '/dashboard',
         icon: 'cil-speedometer',
       },
-      {
-        _name: 'CSidebarNavTitle',
-        _children: ['Hall of Fame']
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Top Selling Tokens',
-        to: '/hall/tokens',
-        icon: 'cil-dollar'
-      },
-      {
-        _name: 'CSidebarNavTitle',
-        _children: ['Artists']
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Top Artists by ETH',
-        to: '/hall/artists',
-        icon: 'cil-puzzle'
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Top Artists by Sales',
-        to: '/hall/sales',
-        icon: 'cil-puzzle'
-      },
-      {
-        _name: 'CSidebarNavItem',
-        name: 'Top Artists by Editions',
-        to: '/hall/editions',
-        icon: 'cil-puzzle'
-      },
+      // {
+      //   _name: 'CSidebarNavTitle',
+      //   _children: ['Hall of Fame']
+      // },
+      // {
+      //   _name: 'CSidebarNavItem',
+      //   name: 'Top Selling Tokens',
+      //   to: '/hall/tokens',
+      //   icon: 'cil-dollar'
+      // },
+      // {
+      //   _name: 'CSidebarNavTitle',
+      //   _children: ['Artists']
+      // },
+      // {
+      //   _name: 'CSidebarNavItem',
+      //   name: 'Top Artists by ETH',
+      //   to: '/hall/artists',
+      //   icon: 'cil-puzzle'
+      // },
+      // {
+      //   _name: 'CSidebarNavItem',
+      //   name: 'Top Artists by Sales',
+      //   to: '/hall/sales',
+      //   icon: 'cil-puzzle'
+      // },
+      // {
+      //   _name: 'CSidebarNavItem',
+      //   name: 'Top Artists by Editions',
+      //   to: '/hall/editions',
+      //   icon: 'cil-puzzle'
+      // },
       // {
       //   _name: 'CSidebarNavTitle',
       //   _children: ['Components']
