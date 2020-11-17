@@ -83,6 +83,38 @@
               </template>
             </CWidgetDropdown>
           </CCol>
+          <CCol sm="6" lg="3">
+            <CWidgetDropdown color="success" :header="todayCounts[0].bidsPlacedCount" text="Offers Made" v-if="todayCounts">
+              <template #default></template>
+              <template #footer>
+                <CChartLineSimple
+                    style="height:70px"
+                    background-color="rgba(255,255,255,.2)"
+                    :data-points="weekInBidsAcceptedCount()"
+                    :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                    point-hover-background-color="success"
+                    label="Offers Made"
+                    labels="Offers Made"
+                />
+              </template>
+            </CWidgetDropdown>
+          </CCol> 
+          <CCol sm="6" lg="3">
+            <CWidgetDropdown color="primary" :header="todayCounts[0].bidsRejectedCount" text="Offers Rejected" v-if="todayCounts">
+              <template #default></template>
+              <template #footer>
+                <CChartLineSimple
+                    style="height:70px"
+                    background-color="rgba(255,255,255,.2)"
+                    :data-points="weekInBidsAcceptedCount()"
+                    :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                    point-hover-background-color="primary"
+                    label="Offers Rejected"
+                    labels="Offers Rejected"
+                />
+              </template>
+            </CWidgetDropdown>
+          </CCol>
         </CRow>
     </div>
 </template>
