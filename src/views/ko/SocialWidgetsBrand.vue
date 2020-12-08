@@ -1,7 +1,7 @@
 <template>
   <CRow>
     <template v-if="!noCharts">
-      <CCol md="3" sm="6">
+      <CCol md="2" sm="6">
         <CWidgetBrand
           color="facebook"
           right-header="1040"
@@ -23,13 +23,11 @@
           />
         </CWidgetBrand>
        </CCol>
-       <CCol md="3" sm="6">
+       <CCol md="2" sm="6">
         <CWidgetBrand
           color="twitter"
           right-header="9.3k"
           right-footer="followers"
-          left-header="11.2K"
-          left-footer="tweets"
         >
           <CIcon
             name="cib-twitter"
@@ -45,7 +43,7 @@
           />
         </CWidgetBrand>
        </CCol>
-       <CCol md="3" sm="6">
+       <CCol md="2" sm="6">
         <CWidgetBrand
           color="danger"
           right-header="832"
@@ -67,28 +65,66 @@
           />
         </CWidgetBrand>
        </CCol>
-       <CCol md="3" sm="6">
-        <CWidgetBrand
-          right-header="269,057"
-          right-footer="alexa rank"
-          left-header="6.7K"
-          left-footer="visits"
-          color="warning"
-        >
-          <CIcon
-            name="cil-globe-alt"
-            height="52"
-            class="my-4"
-          />
+       <CCol md="2" sm="6">
+         <CWidgetBrand
+             color="success"
+             right-header="897"
+             right-footer="members"
+         >
+           <CIcon
+              name="cib-discord"
+              height="52"
+              class="my-4"
+           />
           <CChartLineSimple
-            class="c-chart-brand"
-            background-color="rgba(255,255,255,.1)"
-            :data-points="[10, 20, 56, 122, 297, 323, 564, 670]"
-            label="Followers"
-            labels="months"
+              class="c-chart-brand"
+              background-color="rgba(255,255,255,.1)"
+              :data-points="[10, 33, 44, 200, 300, 500, 565, 832]"
+              label="Contracts"
+              labels="months"
           />
         </CWidgetBrand>
-      </CCol>
+       </CCol>
+       <CCol md="2" sm="6">
+        <CWidgetBrand
+            right-header="6.7K"
+            right-footer="visits"
+            color="warning"
+        >
+          <CIcon
+              name="cil-globe-alt"
+              height="52"
+              class="my-4"
+          />
+          <CChartLineSimple
+              class="c-chart-brand"
+              background-color="rgba(255,255,255,.1)"
+              :data-points="[10, 20, 56, 122, 297, 323, 564, 670]"
+              label="Followers"
+              labels="months"
+          />
+         </CWidgetBrand>
+        </CCol>
+        <CCol md="2" sm="6">
+          <CWidgetBrand
+              right-header="183"
+              right-footer="subscribers"
+              color="primary"
+          >
+            <CIcon
+                name="cib-youtube"
+                height="52"
+                class="my-4"
+            />
+            <CChartLineSimple
+                class="c-chart-brand"
+                background-color="rgba(255,255,255,.1)"
+                :data-points="[10, 20, 56, 122, 297, 323, 564, 670]"
+                label="Followers"
+                labels="months"
+            />
+          </CWidgetBrand>
+        </CCol>
     </template>
     <template v-else>
       <CCol md="3" sm="6">
