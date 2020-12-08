@@ -9,6 +9,7 @@ import {
   cibStackOverflow,
   cibYoutube,
   cibDribbble,
+    cibDiscord,
   cibInstagram,
   cibPinterest,
   cibVk,
@@ -163,5 +164,7 @@ export const iconsSet = Object.assign(
     cibGooglePay,
     cibCcAmex,
     cibTelegramPlane,
+      cibDiscord,
+
   }
 )
