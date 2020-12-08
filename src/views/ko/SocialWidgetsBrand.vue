@@ -48,7 +48,7 @@
        <CCol md="3" sm="6">
         <CWidgetBrand
           color="danger"
-          right-header="832"
+          right-header="1.8k"
           right-footer="followers"
           left-header="458"
           left-footer="posts"
@@ -71,7 +71,7 @@
         <CWidgetBrand
           right-header="269,057"
           right-footer="alexa rank"
-          left-header="6.7K"
+          left-header="11.7K"
           left-footer="visits"
           color="warning"
         >

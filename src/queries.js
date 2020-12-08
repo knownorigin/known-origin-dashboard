@@ -13,6 +13,7 @@ export const TODAY_COUNTS = gql`
             bidsRejectedCount
             totalValueInEth
             highestValueInEth
+            secondarySalesValue
         }
     }
 `;
