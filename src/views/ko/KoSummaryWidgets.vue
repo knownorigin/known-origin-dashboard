@@ -1,6 +1,6 @@
 <template>
     <CRow>
-        <CCol sm="6" lg="3">
+        <CCol sm="6" lg="6">
             <CWidgetDropdown color="danger" :header="monthInSalesCountTotal()" text="Sales" v-if="koData">
                 <template #default></template>
                 <template #footer>
@@ -16,7 +16,7 @@
                 </template>
             </CWidgetDropdown>
         </CCol>
-        <CCol sm="6" lg="3">
+        <CCol sm="6" lg="6">
             <CWidgetDropdown color="primary" :header="monthInSalesTotal()" text="ETH" v-if="koData">
                 <template #default></template>
                 <template #footer>
