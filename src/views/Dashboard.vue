@@ -111,6 +111,13 @@
             </CCardBody>
         </CCard>
 
+        <CCard>
+          <CCardBody>
+            <h4>Today misc figures</h4>
+            <KoTodayMiscFiguress/>
+          </CCardBody>
+        </CCard>
+
 
     </div>
 </template>
@@ -135,10 +142,12 @@
     import CumulativePrimarySales from './ko/CumulativePrimarySales';
     import CChartBarSimple from "./charts/CChartBarSimple";
     import SalesGraphs from "./ko/SalesGraph";
+    import KoTodayMiscFigures from "@/views/ko/KoTodayMiscFigures";
 
     export default {
         name: 'Dashboard',
         components: {
+          KoTodayMiscFigures,
             SalesGraphs,
             CChartBarSimple,
             CumulativePrimarySales,
