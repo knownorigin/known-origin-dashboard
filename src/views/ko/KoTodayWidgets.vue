@@ -50,6 +50,22 @@
                     </template>
                 </CWidgetDropdown>
             </CCol>
+            <CCol sm="6" lg="3">
+                <CWidgetDropdown color="success" :header="todayCounts[0].bidsAcceptedCount" text="Offers Accepted" v-if="todayCounts">
+                    <template #default></template>
+                    <template #footer>
+                        <CChartLineSimple
+                                style="height:70px"
+                                background-color="rgba(255,255,255,.2)"
+                                :data-points="weekInBidsAcceptedCount()"
+                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                                point-hover-background-color="warning"
+                                label="Offers Accepted"
+                                labels="Offers Accepted"
+                        />
+                    </template>
+                </CWidgetDropdown>
+            </CCol>
         </CRow>
     </div>
 </template>

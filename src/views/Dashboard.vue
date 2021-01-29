@@ -29,7 +29,6 @@
         </CCard>
 
 
-
         <WidgetsBrand/>
 
         <!-- <CRow class="mb-4">
@@ -87,23 +86,24 @@
 
         <CCard>
             <CCardBody>
-                <h4>{{currentMonthName}}</h4>
-                <KoSummaryWidgets :ko-data="currentMonthCounts"/>
-            </CCardBody>
-        </CCard>
-
-        <CCard>
-            <CCardBody>
-                <h4>{{lastMonthName}}</h4>
-                <KoSummaryWidgets :ko-data="lastMonthCounts"/>
-            </CCardBody>
-        </CCard>
-
-
-        <CCard>
-            <CCardBody>
-                <h4>All time</h4>
-                <KoSummaryWidgets :ko-data="allTimeCounts"/>
+                <CRow>
+                    <CCol sm="6" lg="6">
+                        <h4>{{currentMonthName}}</h4>
+                        <KoSummaryWidgets :ko-data="currentMonthCounts"/>
+                    </CCol>
+                    <CCol sm="6" lg="6">
+                        <h4>{{lastMonthName}}</h4>
+                        <KoSummaryWidgets :ko-data="lastMonthCounts"/>
+                    </CCol>
+                    <CCol sm="6" lg="6">
+                        <h4>All time</h4>
+                        <KoSummaryWidgets :ko-data="allTimeCounts"/>
+                    </CCol>
+                    <CCol sm="6" lg="6">
+                        <h4>Last seven days</h4>
+                        <KoSummaryWidgets :ko-data="last7Counts"/>
+                    </CCol>
+                </CRow>
             </CCardBody>
         </CCard>
 

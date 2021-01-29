@@ -1,106 +1,104 @@
 <template>
-    <div>
-        <CRow>
-            <CCol sm="6" lg="3">
-                <CWidgetDropdown color="danger" :header="monthInSalesCountTotal()" text="Sales" v-if="koData">
-                    <template #default></template>
-                    <template #footer>
-                        <CChartLineSimple
-                                style="height:70px"
-                                background-color="rgb(250, 152, 152)"
-                                :data-points="monthInSalesCount()"
-                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
-                                point-hover-background-color="danger"
-                                label="Sales"
-                                labels="Sales"
-                        />
-                    </template>
-                </CWidgetDropdown>
-            </CCol>
-            <CCol sm="6" lg="3">
-                <CWidgetDropdown color="primary" :header="monthInSalesTotal()" text="ETH" v-if="koData">
-                    <template #default></template>
-                    <template #footer>
-                        <CChartLineSimple
-                                style="height:70px"
-                                background-color="rgba(255,255,255,.2)"
-                                :data-points="monthInSales()"
-                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
-                                point-hover-background-color="primary"
-                                label="Transfers"
-                                labels="Transfers"
-                        />
-                    </template>
-                </CWidgetDropdown>
-            </CCol>
-            <CCol sm="6" lg="3">
-                <CWidgetDropdown color="info" :header="monthInTransfersTotal()" text="Transfers" v-if="koData">
-                    <template #default></template>
-                    <template #footer>
-                        <CChartLineSimple
-                                style="height:70px"
-                                background-color="rgba(255,255,255,.2)"
-                                :data-points="monthInTransfers()"
-                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
-                                point-hover-background-color="info"
-                                label="Transfers"
-                                labels="Transfers"
-                        />
-                    </template>
-                </CWidgetDropdown>
-            </CCol>
-            <CCol sm="6" lg="3">
-                <CWidgetDropdown color="warning" :header="monthInEditionsCountTotal()" text="Editions" v-if="koData">
-                    <template #default></template>
-                    <template #footer>
-                        <CChartLineSimple
-                                style="height:70px"
-                                background-color="rgba(255,255,255,.2)"
-                                :data-points="monthInEditionsCount()"
-                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
-                                point-hover-background-color="warning"
-                                label="Editions"
-                                labels="Editions"
-                        />
-                    </template>
-                </CWidgetDropdown>
-            </CCol>
-        </CRow>
-<!--        <CRow>-->
-<!--          <CCol sm="6" lg="3">-->
-<!--            <CWidgetDropdown color="primary" :header="monthBidVolumeTotal()" text="Bidding Volume" v-if="koData">-->
-<!--              <template #default></template>-->
-<!--              <template #footer>-->
-<!--                <CChartLineSimple-->
-<!--                    style="height:70px"-->
-<!--                    background-color="rgba(255,255,255,.2)"-->
-<!--                    :data-points="monthBidVolume()"-->
-<!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
-<!--                    point-hover-background-color="primary"-->
-<!--                    label="Transfers"-->
-<!--                    labels="Transfers"-->
-<!--                />-->
-<!--              </template>-->
-<!--            </CWidgetDropdown>-->
-<!--          </CCol>-->
-<!--          <CCol sm="6" lg="3">-->
-<!--            <CWidgetDropdown color="primary" :header="monthBidPlacedTotal()" text="Bid Placed" v-if="koData">-->
-<!--              <template #default></template>-->
-<!--              <template #footer>-->
-<!--                <CChartLineSimple-->
-<!--                    style="height:70px"-->
-<!--                    background-color="rgba(255,255,255,.2)"-->
-<!--                    :data-points="monthBidPlacedVolume()"-->
-<!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
-<!--                    point-hover-background-color="primary"-->
-<!--                    label="Transfers"-->
-<!--                    labels="Transfers"-->
-<!--                />-->
-<!--              </template>-->
-<!--            </CWidgetDropdown>-->
-<!--          </CCol>-->
-<!--        </CRow>-->
-    </div>
+    <CRow>
+        <CCol sm="6" lg="3">
+            <CWidgetDropdown color="danger" :header="monthInSalesCountTotal()" text="Sales" v-if="koData">
+                <template #default></template>
+                <template #footer>
+                    <CChartLineSimple
+                            style="height:70px"
+                            background-color="rgb(250, 152, 152)"
+                            :data-points="monthInSalesCount()"
+                            :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                            point-hover-background-color="danger"
+                            label="Sales"
+                            labels="Sales"
+                    />
+                </template>
+            </CWidgetDropdown>
+        </CCol>
+        <CCol sm="6" lg="3">
+            <CWidgetDropdown color="primary" :header="monthInSalesTotal()" text="ETH" v-if="koData">
+                <template #default></template>
+                <template #footer>
+                    <CChartLineSimple
+                            style="height:70px"
+                            background-color="rgba(255,255,255,.2)"
+                            :data-points="monthInSales()"
+                            :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                            point-hover-background-color="primary"
+                            label="Transfers"
+                            labels="Transfers"
+                    />
+                </template>
+            </CWidgetDropdown>
+        </CCol>
+        <!--            <CCol sm="6" lg="3">-->
+        <!--                <CWidgetDropdown color="info" :header="monthInTransfersTotal()" text="Transfers" v-if="koData">-->
+        <!--                    <template #default></template>-->
+        <!--                    <template #footer>-->
+        <!--                        <CChartLineSimple-->
+        <!--                                style="height:70px"-->
+        <!--                                background-color="rgba(255,255,255,.2)"-->
+        <!--                                :data-points="monthInTransfers()"-->
+        <!--                                :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+        <!--                                point-hover-background-color="info"-->
+        <!--                                label="Transfers"-->
+        <!--                                labels="Transfers"-->
+        <!--                        />-->
+        <!--                    </template>-->
+        <!--                </CWidgetDropdown>-->
+        <!--            </CCol>-->
+        <!--            <CCol sm="6" lg="3">-->
+        <!--                <CWidgetDropdown color="warning" :header="monthInEditionsCountTotal()" text="Editions" v-if="koData">-->
+        <!--                    <template #default></template>-->
+        <!--                    <template #footer>-->
+        <!--                        <CChartLineSimple-->
+        <!--                                style="height:70px"-->
+        <!--                                background-color="rgba(255,255,255,.2)"-->
+        <!--                                :data-points="monthInEditionsCount()"-->
+        <!--                                :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+        <!--                                point-hover-background-color="warning"-->
+        <!--                                label="Editions"-->
+        <!--                                labels="Editions"-->
+        <!--                        />-->
+        <!--                    </template>-->
+        <!--                </CWidgetDropdown>-->
+        <!--            </CCol>-->
+        <!--        </CRow>-->
+        <!--        <CRow>-->
+        <!--          <CCol sm="6" lg="3">-->
+        <!--            <CWidgetDropdown color="primary" :header="monthBidVolumeTotal()" text="Bidding Volume" v-if="koData">-->
+        <!--              <template #default></template>-->
+        <!--              <template #footer>-->
+        <!--                <CChartLineSimple-->
+        <!--                    style="height:70px"-->
+        <!--                    background-color="rgba(255,255,255,.2)"-->
+        <!--                    :data-points="monthBidVolume()"-->
+        <!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+        <!--                    point-hover-background-color="primary"-->
+        <!--                    label="Transfers"-->
+        <!--                    labels="Transfers"-->
+        <!--                />-->
+        <!--              </template>-->
+        <!--            </CWidgetDropdown>-->
+        <!--          </CCol>-->
+        <!--          <CCol sm="6" lg="3">-->
+        <!--            <CWidgetDropdown color="primary" :header="monthBidPlacedTotal()" text="Bid Placed" v-if="koData">-->
+        <!--              <template #default></template>-->
+        <!--              <template #footer>-->
+        <!--                <CChartLineSimple-->
+        <!--                    style="height:70px"-->
+        <!--                    background-color="rgba(255,255,255,.2)"-->
+        <!--                    :data-points="monthBidPlacedVolume()"-->
+        <!--                    :options="{ elements: { line: { borderWidth: 2.5 }}}"-->
+        <!--                    point-hover-background-color="primary"-->
+        <!--                    label="Transfers"-->
+        <!--                    labels="Transfers"-->
+        <!--                />-->
+        <!--              </template>-->
+        <!--            </CWidgetDropdown>-->
+        <!--          </CCol>-->
+    </CRow>
 </template>
 
 <script>
@@ -109,7 +107,7 @@
   export default {
     name: 'KoSummaryWidgets',
     components: {CChartLineSimple},
-    props: ['koData'],
+    props: ['koData', 'label'],
     methods: {
       monthInSalesCountTotal() {
         if (!this.koData) return null;
