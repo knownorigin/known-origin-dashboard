@@ -32,55 +32,72 @@
                         />
                     </template>
                 </CWidgetDropdown>
-          </CCol>
+            </CCol>
+            <CCol sm="6" lg="3">
+                <CWidgetDropdown color="warning" :header="todayCounts[0].editionsCount" text="Editions"
+                                 v-if="todayCounts">
+                    <template #default></template>
+                    <template #footer>
+                        <CChartLineSimple
+                                style="height:70px"
+                                background-color="rgba(255,255,255,.2)"
+                                :data-points="weekInEditionsCount()"
+                                :options="{ elements: { line: { borderWidth: 2.5 }}}"
+                                point-hover-background-color="warning"
+                                label="Editions"
+                                labels="Editions"
+                        />
+                    </template>
+                </CWidgetDropdown>
+            </CCol>
         </CRow>
     </div>
 </template>
 
 <script>
-    import {CChartLineSimple} from '../charts';
-    import {LAST_WEEK_COUNTS, TODAY_COUNTS} from "../../queries";
+  import {CChartLineSimple} from '../charts';
+  import {LAST_WEEK_COUNTS, TODAY_COUNTS} from "../../queries";
 
-    export default {
-        name: 'KoTodayWidgets',
-        components: {CChartLineSimple},
-        methods: {
-            weekInSalesCount() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.salesCount).reverse();
-            },
-            weekInSales() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.totalValueInEth).reverse();
-            },
-            weekInTransfers() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.transferCount).reverse();
-            },
-            weekInEditionsCount() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.editionsCount).reverse();
-            },
-            weekInBidsAcceptedCount() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.bidsAcceptedCount).reverse();
-            },
-            weekInBidsMadeCount() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.bidsPlacedCount).reverse();
-            },
-            weekInBidsRejectedCount() {
-                if (!this.lastWeekCounts) return [];
-                return this.lastWeekCounts.map(counts => counts.bidsRejectedCount).reverse();
-            },
-            dayInSecondarySalesValue() {
-                if (!this.todayCounts) return [];
-                return this.todayCounts.map(counts => counts.secondarySalesValue).reverse();
-            },
-        },
-        apollo: {
-            todayCounts: TODAY_COUNTS,
-            lastWeekCounts: LAST_WEEK_COUNTS,
-        },
-    };
+  export default {
+    name: 'KoTodayWidgets',
+    components: {CChartLineSimple},
+    methods: {
+      weekInSalesCount() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.salesCount).reverse();
+      },
+      weekInSales() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.totalValueInEth).reverse();
+      },
+      weekInTransfers() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.transferCount).reverse();
+      },
+      weekInEditionsCount() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.editionsCount).reverse();
+      },
+      weekInBidsAcceptedCount() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.bidsAcceptedCount).reverse();
+      },
+      weekInBidsMadeCount() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.bidsPlacedCount).reverse();
+      },
+      weekInBidsRejectedCount() {
+        if (!this.lastWeekCounts) return [];
+        return this.lastWeekCounts.map(counts => counts.bidsRejectedCount).reverse();
+      },
+      dayInSecondarySalesValue() {
+        if (!this.todayCounts) return [];
+        return this.todayCounts.map(counts => counts.secondarySalesValue).reverse();
+      },
+    },
+    apollo: {
+      todayCounts: TODAY_COUNTS,
+      lastWeekCounts: LAST_WEEK_COUNTS,
+    },
+  };
 </script>

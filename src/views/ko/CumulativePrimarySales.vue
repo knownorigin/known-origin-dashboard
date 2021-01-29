@@ -80,9 +80,9 @@ export default {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              maxTicksLimit: 3,
-              stepSize: 50,
-              max: 2500
+              maxTicksLimit: 10,
+              stepSize: 100,
+              max: 3000
             },
             gridLines: {
               display: true

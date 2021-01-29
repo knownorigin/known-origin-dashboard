@@ -10,14 +10,14 @@
         <CCard>
             <CCardBody>
                 <CRow>
-                    <CCol sm="6" lg="6">
+                    <CCol sm="4" lg="4">
                         <h4>Cumulative sales primary (ETH)</h4>
                         <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
                         <div>
                             <CumulativePrimarySales :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
                         </div>
                     </CCol>
-                    <CCol sm="6" lg="6">
+                    <CCol sm="8" lg="8">
                         <h4>Monthly revenue (USD)</h4>
                         <div class="small text-muted mt-1 mb-4">Secondary sales data from OpenSea</div>
                         <div>
@@ -28,12 +28,9 @@
             </CCardBody>
         </CCard>
 
-        <CCard>
-            <CCardBody>
-                <h4>All time</h4>
-                <KoSummaryWidgets :ko-data="allTimeCounts"/>
-            </CCardBody>
-        </CCard>
+
+
+        <WidgetsBrand/>
 
         <!-- <CRow class="mb-4">
             <CCol sm="4">
@@ -102,21 +99,27 @@
             </CCardBody>
         </CCard>
 
-        <WidgetsBrand/>
 
         <CCard>
             <CCardBody>
-                <h4>Last seven days</h4>
-                <KoSummaryWidgets :ko-data="last7Counts"/>
+                <h4>All time</h4>
+                <KoSummaryWidgets :ko-data="allTimeCounts"/>
             </CCardBody>
         </CCard>
 
-        <CCard>
-          <CCardBody>
-            <h4>Today misc figures</h4>
-            <KoTodayMiscFiguress/>
-          </CCardBody>
-        </CCard>
+<!--        <CCard>-->
+<!--            <CCardBody>-->
+<!--                <h4>Last seven days</h4>-->
+<!--                <KoSummaryWidgets :ko-data="last7Counts"/>-->
+<!--            </CCardBody>-->
+<!--        </CCard>-->
+
+<!--        <CCard>-->
+<!--          <CCardBody>-->
+<!--            <h4>Today misc figures</h4>-->
+<!--            <KoTodayMiscFiguress/>-->
+<!--          </CCardBody>-->
+<!--        </CCard>-->
 
 
     </div>
