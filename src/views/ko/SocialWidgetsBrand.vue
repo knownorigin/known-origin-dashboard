@@ -4,7 +4,7 @@
       <CCol md="2" sm="6">
         <CWidgetBrand
           color="facebook"
-          right-header="1095"
+          right-header="1117"
           right-footer="community"
           left-header="2"
           left-footer="years"
@@ -26,7 +26,7 @@
        <CCol md="2" sm="6">
         <CWidgetBrand
           color="twitter"
-          right-header="11k"
+          right-header="11.8k"
           right-footer="followers"
         >
           <CIcon
@@ -46,9 +46,9 @@
        <CCol md="2" sm="6">
         <CWidgetBrand
           color="danger"
-          right-header="3.5k"
+          right-header="4.4k"
           right-footer="followers"
-          left-header="554"
+          left-header="601"
           left-footer="posts"
         >
           <CIcon
@@ -68,7 +68,7 @@
        <CCol md="2" sm="6">
          <CWidgetBrand
              color="success"
-             right-header="1249"
+             right-header="1631"
              right-footer="members"
          >
            <CIcon
@@ -87,7 +87,7 @@
        </CCol>
        <CCol md="2" sm="6">
         <CWidgetBrand
-          right-header="269,057"
+          right-header="253,219"
           right-footer="alexa rank"
           left-header="11.7K"
           left-footer="visits"
@@ -109,7 +109,7 @@
         </CCol>
         <CCol md="2" sm="6">
           <CWidgetBrand
-              right-header="218"
+              right-header="246"
               right-footer="subscribers"
               color="primary"
           >
