@@ -1,15 +1,15 @@
 <template>
     <CRow>
         <CCol sm="6" lg="6">
-            <CWidgetDropdown color="danger" :header="monthInSalesCountTotal()" text="Sales" v-if="koData">
+            <CWidgetDropdown color="success" :header="monthInSalesCountTotal()" text="Sales" v-if="koData">
                 <template #default></template>
                 <template #footer>
                     <CChartLineSimple
                             style="height:70px"
-                            background-color="rgb(250, 152, 152)"
+                            background-color="rgba(255,255,255,.2)"
                             :data-points="monthInSalesCount()"
                             :options="{ elements: { line: { borderWidth: 2.5 }}}"
-                            point-hover-background-color="danger"
+                            point-hover-background-color="success"
                             label="Sales"
                             labels="Sales"
                     />

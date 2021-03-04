@@ -2,12 +2,12 @@
     <div>
         <CRow>
             <CCol sm="6" lg="3">
-                <CWidgetDropdown color="danger" :header="todayCounts[0].salesCount" text="Sales" v-if="todayCounts">
+                <CWidgetDropdown color="success" :header="todayCounts[0].salesCount" text="Sales" v-if="todayCounts">
                     <template #default></template>
                     <template #footer>
                         <CChartLineSimple
                                 style="height:70px"
-                                background-color="rgb(250, 152, 152)"
+                                background-color="rgba(255,255,255,.2)"
                                 :data-points="weekInSalesCount()"
                                 :options="{ elements: { line: { borderWidth: 2.5 }}}"
                                 point-hover-background-color="danger"
@@ -51,7 +51,7 @@
                 </CWidgetDropdown>
             </CCol>
             <CCol sm="6" lg="3">
-                <CWidgetDropdown color="success" :header="todayCounts[0].bidsAcceptedCount" text="Offers Accepted" v-if="todayCounts">
+                <CWidgetDropdown color="info" :header="todayCounts[0].bidsAcceptedCount" text="Offers Accepted" v-if="todayCounts">
                     <template #default></template>
                     <template #footer>
                         <CChartLineSimple

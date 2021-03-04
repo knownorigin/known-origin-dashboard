@@ -10,18 +10,111 @@
         <CCard>
             <CCardBody>
                 <CRow>
-                    <CCol sm="4" lg="4">
-                        <h4>Cumulative sales primary (ETH)</h4>
-                        <div class="small text-muted mt-1 mb-4">April 2017 - present</div>
+                    <CCol sm="0" lg="2">
+<!--                        <h4>Cumulative sales primary (ETH)</h4>-->
+<!--                        <div class="small text-muted mt-1 mb-4">April 2017 - present</div>-->
+<!--                        <div>-->
+<!--                            <CumulativePrimarySales :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>-->
+<!--                        </div>-->
                         <div>
-                            <CumulativePrimarySales :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>
+
+                            <CWidgetBrand
+                                    color="danger"
+                                    right-header="11.8k"
+                                    right-footer="followers"
+                                    left-header="723"
+                                    left-footer="posts"
+                            >
+                                <CIcon
+                                        name="cib-instagram"
+                                        height="52"
+                                        class="my-4"
+                                />
+                                <CChartLineSimple
+                                        class="c-chart-brand"
+                                        background-color="rgba(255,255,255,.1)"
+                                        :data-points="[10, 33, 44, 200, 300, 500, 565, 832]"
+                                        label="Contracts"
+                                        labels="months"
+                                />
+                            </CWidgetBrand>
+
+                            <CWidgetBrand
+                                    color="twitter"
+                                    right-header="17.8K"
+                                    right-footer="followers"
+                            >
+                                <CIcon
+                                        name="cib-twitter"
+                                        height="52"
+                                        class="my-4"
+                                />
+                                <CChartLineSimple
+                                        class="c-chart-brand"
+                                        background-color="rgba(255,255,255,.1)"
+                                        :data-points="[1, 13, 9, 17, 34, 41, 38, 42, 45, 52]"
+                                        label="Followers"
+                                        labels="months"
+                                />
+                            </CWidgetBrand>
                         </div>
                     </CCol>
-                    <CCol sm="8" lg="8">
+                    <CCol sm="12" lg="8">
                         <h4>Monthly revenue (USD)</h4>
                         <div class="small text-muted mt-1 mb-4">Secondary sales data from OpenSea</div>
                         <div>
                             <SalesGraphs/>
+                        </div>
+                    </CCol>
+                    <CCol sm="0" lg="2">
+                        <!--                        <h4>Cumulative sales primary (ETH)</h4>-->
+                        <!--                        <div class="small text-muted mt-1 mb-4">April 2017 - present</div>-->
+                        <!--                        <div>-->
+                        <!--                            <CumulativePrimarySales :allTimeCounts="allTimeCounts" v-if="allTimeCounts"/>-->
+                        <!--                        </div>-->
+                        <div>
+
+                            <CWidgetBrand
+                                    color="success"
+                                    right-header="4672"
+                                    right-footer="members"
+                                    left-header="1"
+                                    left-footer="years"
+                            >
+                                <CIcon
+                                        name="cib-discord"
+                                        height="52"
+                                        class="my-4"
+                                />
+                                <CChartLineSimple
+                                        class="c-chart-brand"
+                                        background-color="rgba(255,255,255,.1)"
+                                        :data-points="[10, 33, 44, 200, 300, 500, 565, 832]"
+                                        label="Contracts"
+                                        labels="months"
+                                />
+                            </CWidgetBrand>
+
+                            <CWidgetBrand
+                                    color="facebook"
+                                    right-header="1309"
+                                    right-footer="community"
+                                    left-header="2"
+                                    left-footer="years"
+                            >
+                                <CIcon
+                                        name="cib-telegram-plane"
+                                        height="52"
+                                        class="my-4"
+                                />
+                                <CChartLineSimple
+                                        class="c-chart-brand"
+                                        background-color="rgba(255,255,255,.1)"
+                                        :data-points="[50, 70, 150, 250, 443, 636, 650, 774]"
+                                        label="Friends"
+                                        labels="months"
+                                />
+                            </CWidgetBrand>
                         </div>
                     </CCol>
                 </CRow>
