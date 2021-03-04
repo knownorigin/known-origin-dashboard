@@ -48,7 +48,7 @@
           color="danger"
           right-header="11.8k"
           right-footer="followers"
-          left-header="601"
+          left-header="723"
           left-footer="posts"
         >
           <CIcon
@@ -109,7 +109,7 @@
         </CCol>
         <CCol md="2" sm="6">
           <CWidgetBrand
-              right-header="246"
+              right-header="362"
               right-footer="subscribers"
               color="primary"
           >
